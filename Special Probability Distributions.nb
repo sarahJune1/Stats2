@@ -1,0 +1,2936 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[    115951,       2928]
+NotebookOptionsPosition[     99363,       2656]
+NotebookOutlinePosition[     99724,       2672]
+CellTagsIndexPosition[     99681,       2669]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Special Probability Distributions", "Title",
+ CellChangeTimes->{{3.73058821406988*^9, 
+  3.730588247956085*^9}},ExpressionUUID->"7845f6e4-e1b0-41b5-811f-\
+13446ae0e18c"],
+
+Cell["Created in Mathematica by Sarah Sachs \[Wolf]", "Subsubtitle",
+ CellChangeTimes->{{3.730588524071912*^9, 3.730588534446713*^9}, {
+  3.730590527043602*^9, 
+  3.730590528103094*^9}},ExpressionUUID->"86b83f19-0271-46a9-a8e1-\
+18de33b3942a"],
+
+Cell[CellGroupData[{
+
+Cell["Binomial Distribution", "Section",
+ CellChangeTimes->{{3.730588591417264*^9, 
+  3.730588597950328*^9}},ExpressionUUID->"37407d45-271d-4415-b510-\
+9ec49a67fdc2"],
+
+Cell["Characteristics of a binomial experiment", "Text",
+ CellChangeTimes->{{3.7305886179977627`*^9, 
+  3.7305886277877407`*^9}},ExpressionUUID->"6bc9b182-ba31-4abd-afe8-\
+25e4a8ce6f60"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Consists of a fixed number, say ",
+ StyleBox["n, ",
+  FontSlant->"Italic"],
+ "of independent trials."
+}], "ItemNumbered",
+ CellChangeTimes->{{3.730588646307192*^9, 
+  3.7305886695722857`*^9}},ExpressionUUID->"68d1c680-52f9-4e14-a399-\
+4d4856ad78ce"],
+
+Cell["\<\
+Each trial may results in one of two possible outcomes, S or F.\
+\>", "ItemNumbered",
+ CellChangeTimes->{{3.730588646307192*^9, 
+  3.7305886875235*^9}},ExpressionUUID->"38f87bc1-d97e-42a4-948f-9d736f49014a"],
+
+Cell[TextData[{
+ "P {success} = P(S) =",
+ StyleBox[" p",
+  FontSlant->"Italic"],
+ " remains constant from trial to trial."
+}], "ItemNumbered",
+ CellChangeTimes->{{3.730588646307192*^9, 
+  3.730588729045497*^9}},ExpressionUUID->"810fda97-5ed3-4ffd-b018-\
+8cfba3b487ca"],
+
+Cell[TextData[{
+ "The random variable of interest is the binomial r.v. X = number of \
+successes in ",
+ StyleBox["n",
+  FontSlant->"Italic"],
+ " trials of the experiment."
+}], "ItemNumbered",
+ CellChangeTimes->{{3.730588646307192*^9, 
+  3.73058875318517*^9}},ExpressionUUID->"4563a28a-1535-408f-8c70-\
+abf65aa44420"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["\nbinomial probability density function (p.d.f)",
+ FontSlant->"Italic"]], "Subsubtitle",
+ CellChangeTimes->{{3.730588802646717*^9, 3.73058880653983*^9}, {
+   3.730589273318153*^9, 3.730589281918755*^9}, 
+   3.7307214902570267`*^9},ExpressionUUID->"1a838e2a-c453-4155-82d1-\
+398ce2d119e0"],
+
+Cell[TextData[{
+ StyleBox["f(x) = b( x ; ",
+  FontSize->18],
+ StyleBox["n p",
+  FontSize->18,
+  FontSlant->"Italic"],
+ StyleBox[") = ",
+  FontSize->18],
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    FractionBox[
+     RowBox[{"n", "!"}], 
+     RowBox[{
+      RowBox[{"x", "!"}], 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"n", "-", "x"}], ")"}], "!"}]}]], 
+    SuperscriptBox["p", "x"]}], TraditionalForm]],
+  FormatType->"TraditionalForm",
+  FontSize->18,ExpressionUUID->"36d454ce-da63-46a1-9c63-481e1766528b"],
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["q", 
+    RowBox[{"(", 
+     RowBox[{"n", "-", "x"}], ")"}]], TraditionalForm]],
+  FormatType->"TraditionalForm",
+  FontSize->18,ExpressionUUID->"8fd8cb6a-3ca2-4413-b1d6-a4b84235b275"],
+ StyleBox[" for x = 0,1, ... n",
+  FontSize->18],
+ "\n\t\t\t",
+ StyleBox["= 0, otherwise.\nFor the binomial r.v. X,  E[X] = ",
+  FontSize->18],
+ StyleBox["n p",
+  FontSize->18,
+  FontSlant->"Italic"],
+ StyleBox[", Var[X] = ",
+  FontSize->18],
+ StyleBox["n p q",
+  FontSize->18,
+  FontSlant->"Italic"],
+ StyleBox[".",
+  FontSize->18]
+}], "Text",
+ CellChangeTimes->{{3.730588861101199*^9, 3.7305890610618763`*^9}, {
+  3.730589599110745*^9, 3.730589604691883*^9}, {3.7307215861570673`*^9, 
+  3.730721588043446*^9}},ExpressionUUID->"d9f308c4-072e-44cc-9ba6-\
+8b3de1760a0a"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"DiscretePlot", "[", 
+    RowBox[{
+     RowBox[{"PDF", "[", 
+      RowBox[{
+       RowBox[{"BinomialDistribution", "[", 
+        RowBox[{"n", ",", "p"}], "]"}], ",", "k"}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"k", ",", "10"}], "}"}], ",", 
+     RowBox[{"PlotRange", "\[Rule]", "All"}], ",", 
+     RowBox[{"PlotMarkers", "\[Rule]", "Automatic"}]}], "]"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{"n", ",", "20", ",", "40", ",", "1"}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{"p", ",", ".1", ",", ".7", ",", ".25"}], "}"}]}], "]"}]], "Input",\
+
+ CellChangeTimes->{{3.732378314642468*^9, 3.732378492858786*^9}, {
+  3.732378545420547*^9, 3.7323786209604597`*^9}, {3.73237874780798*^9, 
+  3.7323787487196703`*^9}},ExpressionUUID->"82d887bd-f2fd-419f-86fe-\
+2e984d492011"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`n$$ = 20, $CellContext`p$$ = 0.1, 
+    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`n$$], 20, 40, 1}, {
+      Hold[$CellContext`p$$], 0.1, 0.7, 0.25}}, Typeset`size$$ = {
+    360., {110., 115.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`n$118693$$ = 
+    0, $CellContext`p$118694$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`n$$ = 20, $CellContext`p$$ = 0.1}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`n$$, $CellContext`n$118693$$, 0], 
+        Hold[$CellContext`p$$, $CellContext`p$118694$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> DiscretePlot[
+        PDF[
+         BinomialDistribution[$CellContext`n$$, $CellContext`p$$], \
+$CellContext`k], {$CellContext`k, 10}, PlotRange -> All, PlotMarkers -> 
+        Automatic], 
+      "Specifications" :> {{$CellContext`n$$, 20, 40, 1}, {$CellContext`p$$, 
+         0.1, 0.7, 0.25}}, "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{405., {169., 175.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{{3.732378575655594*^9, 3.732378622393578*^9}, 
+   3.7323787518718233`*^9},ExpressionUUID->"f06b45f6-ec16-4568-8385-\
+ac24fc4f46f4"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["example", "Subsection",
+ CellChangeTimes->{{3.730589084863739*^9, 
+  3.730589088854817*^9}},ExpressionUUID->"59bf07eb-3bdd-43f1-8d63-\
+2a58d8f8a9f7"],
+
+Cell["\<\
+Five voters are randomly sampled with replacement from a community where 30% \
+of the voters favor the bond issue. What is the probability that more than \
+half in the sample will favor the issue?\
+\>", "Text",
+ CellChangeTimes->{{3.730589093085487*^9, 
+  3.7305891354379997`*^9}},ExpressionUUID->"e78a0bb1-9651-48f2-ab2a-\
+89af5a875a8c"]
+}, Open  ]],
+
+Cell["Hypergeometric Distribution", "Section",
+ CellChangeTimes->{{3.73058915189401*^9, 
+  3.73058916376633*^9}},ExpressionUUID->"217cd2b7-1fd1-492f-b901-\
+cba3b32e1a68"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["hypergeometric p.d.f",
+ FontSlant->"Italic"]], "Subsubtitle",
+ CellChangeTimes->{{3.730589177708763*^9, 
+  3.730589182565867*^9}},ExpressionUUID->"afb09244-886b-4976-bbb2-\
+02babf56d501"],
+
+Cell[TextData[{
+ "f(x) = h(x ; ",
+ StyleBox["N, n, k",
+  FontSlant->"Italic"],
+ ") = P { x successes in a random sample of size ",
+ StyleBox["n",
+  FontSlant->"Italic"],
+ " taken without replacement from a population of size ",
+ StyleBox["N",
+  FontSlant->"Italic"],
+ " containing ",
+ StyleBox["k",
+  FontSlant->"Italic"],
+ " successes}\n\n",
+ StyleBox["f(x) =  h(x ; ",
+  FontSize->18],
+ StyleBox["N, n, k",
+  FontSize->18,
+  FontSlant->"Italic"],
+ StyleBox[") = ",
+  FontSize->18],
+ Cell[BoxData[
+  FormBox[
+   FractionBox[
+    RowBox[{
+     RowBox[{"(", GridBox[{
+        {"k"},
+        {"x"}
+       }], ")"}], 
+     RowBox[{"(", GridBox[{
+        {
+         RowBox[{"N", " ", "-", "  ", "k"}]},
+        {
+         RowBox[{"n", " ", "-", " ", "x"}]}
+       }], ")"}]}], 
+    RowBox[{"(", GridBox[{
+       {"N"},
+       {"n"}
+      }], ")"}]], TraditionalForm]],
+  FontSize->18,ExpressionUUID->"dbb655a1-b9ef-400f-b4a0-57ebac9a3a37"],
+ "\n\n\t   for x = 0, 1, ..., ",
+ StyleBox["k",
+  FontSlant->"Italic"],
+ " \t",
+ StyleBox["if k < n or",
+  FontSlant->"Italic"],
+ "\n\t\tx= 0, 1, ..., ",
+ StyleBox["n\t if n < k. \n",
+  FontSlant->"Italic"],
+ "For the hypergeometric r.v. X, E[X] = ",
+ Cell[BoxData[
+  FormBox[
+   FractionBox["nk", "N"], TraditionalForm]],ExpressionUUID->
+  "11d76576-447d-4be5-9f38-55da99296b60"],
+ ", and Var[X] =\n\t",
+ StyleBox["n",
+  FontSize->18],
+ Cell[BoxData[
+  FormBox[
+   FractionBox["k", "N"], TraditionalForm]],
+  FontSize->18,ExpressionUUID->"024ab393-618e-4a09-a3d0-e1597bc22a5c"],
+ StyleBox["(1 - ",
+  FontSize->18],
+ Cell[BoxData[
+  FormBox[
+   FractionBox["k", "N"], TraditionalForm]],
+  FontSize->18,ExpressionUUID->"a8b0a01e-5c64-45d0-9535-bc1eac12ecaa"],
+ StyleBox[")( ",
+  FontSize->18],
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     FractionBox[
+      RowBox[{"N", "-", "n"}], 
+      RowBox[{"N", "-", "1"}]], ")"}], "."}], TraditionalForm]],
+  FontSize->18,ExpressionUUID->"b43abe04-a931-4d33-9f8b-0adef367dfcb"]
+}], "Text",
+ CellChangeTimes->{{3.730589300536894*^9, 3.730589580004816*^9}, {
+   3.730589634262236*^9, 3.730589753805928*^9}, 
+   3.7307216755898523`*^9},ExpressionUUID->"de9645d7-cd41-4860-985a-\
+700277eb4032"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"DiscretePlot", "[", 
+    RowBox[{
+     RowBox[{"PDF", "[", 
+      RowBox[{
+       RowBox[{"HypergeometricDistribution", "[", 
+        RowBox[{"n", ",", "50", ",", "100"}], "]"}], ",", "k"}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"k", ",", "0", ",", "32"}], "}"}], ",", 
+     RowBox[{"PlotRange", "\[Rule]", "All"}]}], "]"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{"n", ",", "10", ",", "50", ",", "1"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.732374405660351*^9, 3.7323744850340137`*^9}, {
+  3.73237453978191*^9, 3.732374540574181*^9}, {3.732374617763294*^9, 
+  3.732374618064459*^9}, {3.732374732764765*^9, 3.732374735134529*^9}, {
+  3.7323786756731853`*^9, 
+  3.7323787255691643`*^9}},ExpressionUUID->"f4b2db57-082f-42dd-ac0c-\
+b0d19085d672"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`n$$ = 26, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`n$$], 10, 50, 1}}, Typeset`size$$ = {
+    360., {110., 115.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`n$118280$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`n$$ = 10}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`n$$, $CellContext`n$118280$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> DiscretePlot[
+        PDF[
+         HypergeometricDistribution[$CellContext`n$$, 50, 
+          100], $CellContext`k], {$CellContext`k, 0, 32}, PlotRange -> All], 
+      "Specifications" :> {{$CellContext`n$$, 10, 50, 1}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{405., {155., 161.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{{3.732378677435872*^9, 
+  3.732378726938149*^9}},ExpressionUUID->"d58b7b8a-c82a-45e1-a929-\
+23088b21e597"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["example:", "Subsection",
+ CellChangeTimes->{{3.7305897650146303`*^9, 
+  3.7305897764179773`*^9}},ExpressionUUID->"4d18dc4a-b74e-4800-9d61-\
+ed47a2a29b32"],
+
+Cell["\<\
+An enemy force is thought to be hiding in one of 20 locations. General Staff \
+orders a search by picking a site at random, inspecting it, then picking the \
+next site from the remaining 19 etc. After 15 sites have been inspected and \
+the search is still not successful, is the General justified in believing \
+that the enemy has left?\
+\>", "Text",
+ CellChangeTimes->{{3.730589782375058*^9, 
+  3.7305898795092783`*^9}},ExpressionUUID->"51888a17-000f-4009-9a24-\
+1f86e842c438"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["example:", "Subsection",
+ CellChangeTimes->{{3.7305897650146303`*^9, 
+  3.7305897764179773`*^9}},ExpressionUUID->"b729f50f-6c6c-495d-ad9f-\
+0eb026ad5083"],
+
+Cell[TextData[{
+ "A complex of 10 missile sites is defined to be operational if at least 5 \
+are functioning. An inspection consists of a random selection of four of the \
+10 sites. The complex is judged to be operational if at least 3 of the 4 \
+inspected sites are functioning. If 4 of the 10 sites are actually \
+functioning, what is the probability that the complex will be judged \
+operational? \n\ti.e. What is the probability that the complex will be judged \
+to be operational when it is not?\n\t\nThis is an example of Lot acceptance \
+sampling or hypothesis testing:\n\t",
+ StyleBox["Null hypothesis,",
+  FontSlant->"Italic"],
+ " ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["H", "0"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "529c0fc8-42cb-4570-af80-29a856b0342f"],
+ ": Lot is acceptable ( or complex is operational)\n\t",
+ StyleBox["Alternative hypothesis",
+  FontSlant->"Italic"],
+ ", ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["H", "1"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "a3ff064f-215b-46a7-b580-33da809871bb"],
+ ": reject the lot (or complex flunks inspection)\n\t\n\t{Type I error} = \
+{reject ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["H", "0"], TraditionalForm]],ExpressionUUID->
+  "af2fc4b7-56a8-4df0-b49e-45bc6a4f08e6"],
+ "| ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["H", "0"], TraditionalForm]],ExpressionUUID->
+  "7c4c377e-28cb-4b00-afa4-f9bcaac93f37"],
+ " is true}\n\t\t",
+ StyleBox["e.g. reject lot when lot is good or judge complex nonoperational \
+when complex is operational\n\t\t\n\t",
+  FontSlant->"Italic"],
+ "{Type II error} = {accept ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["H", "0"], TraditionalForm]],ExpressionUUID->
+  "972a3c94-5aa0-4c7b-866f-0a7b3b082410"],
+ " | ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["H", "1"], TraditionalForm]],ExpressionUUID->
+  "941c1d7b-81ec-486f-b13d-dada3510c223"],
+ "is true}\n",
+ StyleBox["\t\te.g. accept lot with too many defectives or judge complex \
+operational when only 4 missiles will fire.",
+  FontSlant->"Italic"]
+}], "Text",
+ CellChangeTimes->{{3.730589782375058*^9, 3.730589864798999*^9}, {
+   3.7305898950679293`*^9, 3.730590006505765*^9}, {3.730590043194759*^9, 
+   3.730590186345316*^9}, {3.730590237230345*^9, 3.730590345982211*^9}, {
+   3.73072174167109*^9, 3.730721762844508*^9}, 
+   3.730721800767892*^9},ExpressionUUID->"e7cb1cbc-b0da-40e2-ba94-\
+a99e52356a57"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["example", "Subsection",
+ CellChangeTimes->{{3.730590358406123*^9, 
+  3.7305903612521563`*^9}},ExpressionUUID->"4b5b3721-8457-4e1d-865f-\
+c308e5b54e73"],
+
+Cell["\<\
+Lots of 40 components are called acceptable if they contain no more than 3 \
+defectives. The procedure for sampling the lot is to select 5 components at \
+random and to reject the lot if a defective is found. What is the probability \
+that exactly 1 defective will be found if there are 4 in the entire lot?\
+\>", "Text",
+ CellChangeTimes->{{3.7305903660949497`*^9, 
+  3.730590423677548*^9}},ExpressionUUID->"089be95a-44b3-4de8-8a2e-\
+005bef999b29"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"lot", "[", "n_", "]"}], " ", "=", " ", 
+   RowBox[{"HypergeometricDistribution", "[", 
+    RowBox[{"n", ",", "5", ",", "40"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"DiscretePlot", "[", 
+  RowBox[{
+   RowBox[{"PDF", "[", 
+    RowBox[{
+     RowBox[{"lot", "[", "3", "]"}], ",", "k"}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"k", ",", "0", ",", "1"}], "}"}], ",", 
+   RowBox[{"ExtentSize", "\[Rule]", 
+    RowBox[{"1", "/", "2"}]}]}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Probability", "[", 
+  RowBox[{
+   RowBox[{"x", "==", "1"}], ",", 
+   RowBox[{"x", "\[Distributed]", 
+    RowBox[{"lot", "[", "4", "]"}]}]}], 
+  "]"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.732374944874714*^9, 3.73237500708457*^9}, {
+  3.732375052622879*^9, 3.732375108338002*^9}, {3.7323751974556828`*^9, 
+  3.73237527043051*^9}, {3.732375482105435*^9, 
+  3.7323756025143127`*^9}},ExpressionUUID->"dee7cdf7-5c33-43d9-817e-\
+cb8bb3fd46e6"],
+
+Cell[BoxData[
+ GraphicsBox[{
+   {RGBColor[0.368417, 0.506779, 0.709798], PointSize[0.012833333333333334`], 
+    AbsoluteThickness[1.6], {
+     {RGBColor[0.368417, 0.506779, 0.709798], PointSize[
+      0.012833333333333334`], AbsoluteThickness[1.6], Opacity[0.2], 
+      RectangleBox[{-0.25, 0.30111336032388664}, {0.25, 0.6624493927125507}]}, 
+     {RGBColor[0.368417, 0.506779, 0.709798], PointSize[
+      0.012833333333333334`], AbsoluteThickness[1.6], Opacity[0.2], 
+      RectangleBox[{0.75, 0.30111336032388664}, \
+{1.25, 0.30111336032388664}]}}}, 
+   {RGBColor[0.368417, 0.506779, 0.709798], PointSize[0.012833333333333334`], 
+    AbsoluteThickness[
+    1.6], {}, {{}, 
+     LineBox[{{{-0.25, 0.6624493927125507}, {0.25, 0.6624493927125507}}, {{
+      0.75, 0.30111336032388664`}, {1.25, 
+      0.30111336032388664`}}}]}, {}, {{}, {}}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesOrigin->NCache[{
+     Rational[-1, 4], 0.30111336032388664`}, {-0.25, 0.30111336032388664`}],
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  Method->{
+   "MessagesHead" -> DiscretePlot, "AxisPadding" -> Scaled[0.02], 
+    "DefaultBoundaryStyle" -> Automatic, "DefaultMeshStyle" -> 
+    AbsolutePointSize[6], "DefaultPlotStyle" -> {
+      Directive[
+       RGBColor[0.368417, 0.506779, 0.709798], 
+       AbsoluteThickness[1.6]], 
+      Directive[
+       RGBColor[0.880722, 0.611041, 0.142051], 
+       AbsoluteThickness[1.6]], 
+      Directive[
+       RGBColor[0.560181, 0.691569, 0.194885], 
+       AbsoluteThickness[1.6]], 
+      Directive[
+       RGBColor[0.922526, 0.385626, 0.209179], 
+       AbsoluteThickness[1.6]], 
+      Directive[
+       RGBColor[0.528488, 0.470624, 0.701351], 
+       AbsoluteThickness[1.6]], 
+      Directive[
+       RGBColor[0.772079, 0.431554, 0.102387], 
+       AbsoluteThickness[1.6]], 
+      Directive[
+       RGBColor[0.363898, 0.618501, 0.782349], 
+       AbsoluteThickness[1.6]], 
+      Directive[
+       RGBColor[1, 0.75, 0], 
+       AbsoluteThickness[1.6]], 
+      Directive[
+       RGBColor[0.647624, 0.37816, 0.614037], 
+       AbsoluteThickness[1.6]], 
+      Directive[
+       RGBColor[0.571589, 0.586483, 0.], 
+       AbsoluteThickness[1.6]], 
+      Directive[
+       RGBColor[0.915, 0.3325, 0.2125], 
+       AbsoluteThickness[1.6]], 
+      Directive[
+       RGBColor[0.40082222609352647`, 0.5220066643438841, 0.85], 
+       AbsoluteThickness[1.6]], 
+      Directive[
+       RGBColor[0.9728288904374106, 0.621644452187053, 0.07336199581899142], 
+       AbsoluteThickness[1.6]], 
+      Directive[
+       RGBColor[0.736782672705901, 0.358, 0.5030266573755369], 
+       AbsoluteThickness[1.6]], 
+      Directive[
+       RGBColor[0.28026441037696703`, 0.715, 0.4292089322474965], 
+       AbsoluteThickness[1.6]]}, "DomainPadding" -> Scaled[0.02], 
+    "PointSizeFunction" -> "SmallPointSize", "RangePadding" -> Scaled[0.05]},
+  PlotRange->NCache[{{
+      Rational[-1, 4], 
+      Rational[5, 4]}, {0.30111336032388664`, 0.6624493927125507}}, {{-0.25, 
+    1.25}, {0.30111336032388664`, 0.6624493927125507}}],
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.02]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{{3.732375060046707*^9, 3.732375110027494*^9}, {
+   3.732375187432981*^9, 3.732375238797029*^9}, 3.7323752720446672`*^9, {
+   3.732375522692973*^9, 
+   3.7323756041835403`*^9}},ExpressionUUID->"16f1d0e3-3e5d-4e7c-b2f5-\
+c8c0731163de"],
+
+Cell[BoxData[
+ FractionBox["6545", "18278"]], "Output",
+ CellChangeTimes->{{3.732375060046707*^9, 3.732375110027494*^9}, {
+   3.732375187432981*^9, 3.732375238797029*^9}, 3.7323752720446672`*^9, {
+   3.732375522692973*^9, 
+   3.7323756042267714`*^9}},ExpressionUUID->"796df49c-bf3c-4e2e-8166-\
+a9ed54917bd2"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Normal Distribution", "Section",
+ CellChangeTimes->{{3.730590433907362*^9, 
+  3.73059044170441*^9}},ExpressionUUID->"0e38a571-fa3e-43ac-860b-\
+a770bd878bbc"],
+
+Cell[TextData[{
+ "If X ~ N(\[Micro], ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["\[Sigma]", "2"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "e58a9a19-c65f-4ce1-96f1-d1bf29464348"],
+ ") then X is continuous and the graph of the p.d.f. of X is a curve with the \
+following properties:"
+}], "Text",
+ CellChangeTimes->{{3.730590483400419*^9, 3.7305905079859543`*^9}, {
+  3.730590541041829*^9, 
+  3.73059059080123*^9}},ExpressionUUID->"bdc1a17b-6e14-4e45-88e3-\
+0766da93e0e4"],
+
+Cell[CellGroupData[{
+
+Cell["bell-shaped", "ItemNumbered",
+ CellChangeTimes->{{3.730590608365556*^9, 
+  3.730590611102022*^9}},ExpressionUUID->"01bd4ab6-938e-45b9-afd9-\
+2360ca143613"],
+
+Cell["symmetric about the mean", "ItemNumbered",
+ CellChangeTimes->{{3.730590608365556*^9, 
+  3.73059061530657*^9}},ExpressionUUID->"608171e2-8126-461a-a8fe-\
+6ed81ef3b18a"],
+
+Cell["asymptotic", "ItemNumbered",
+ CellChangeTimes->{{3.730590608365556*^9, 
+  3.730590617788155*^9}},ExpressionUUID->"b3f4fde4-cd14-4b16-b746-\
+3cb9cd8e5251"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Plot", "[", 
+    RowBox[{
+     RowBox[{"PDF", "[", 
+      RowBox[{
+       RowBox[{"NormalDistribution", "[", 
+        RowBox[{
+         StyleBox["\[Mu]", "TR"], ",", "\[Sigma]"}], "]"}], ",", "x"}], "]"}],
+      ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", 
+       RowBox[{"-", "6"}], ",", "6"}], "}"}], ",", 
+     RowBox[{"Filling", "\[Rule]", "Axis"}]}], "]"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    StyleBox[
+     RowBox[{"\[Mu]", ",", "0", ",", "3", ",", "1"}], "TR"], 
+    StyleBox["}", "TR"]}], 
+   StyleBox[",", "TR"], 
+   StyleBox["\[IndentingNewLine]", "TR"], 
+   RowBox[{
+    StyleBox["{", "TR"], 
+    RowBox[{"\[Sigma]", ",", "1", ",", "10", ",", ".25"}], "}"}]}], 
+  StyleBox["]", "TR"]}]], "Input",
+ CellChangeTimes->{
+  3.732370433718092*^9, {3.732370495708714*^9, 3.732370555775118*^9}, {
+   3.732370948939597*^9, 3.7323709811059504`*^9}, {3.732371145459565*^9, 
+   3.732371178377589*^9}, {3.732371212340672*^9, 
+   3.732371242731278*^9}},ExpressionUUID->"6704e5f1-7594-4f8c-b641-\
+a6405cf15432"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`\[Mu]$$ = 0, $CellContext`\[Sigma]$$ = 1., 
+    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`\[Mu]$$], 0, 3, 1}, {
+      Hold[$CellContext`\[Sigma]$$], 1, 10, 0.25}}, Typeset`size$$ = {
+    360., {112., 116.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`\[Mu]$56357$$ = 
+    0, $CellContext`\[Sigma]$56358$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`\[Mu]$$ = 0, $CellContext`\[Sigma]$$ = 1}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`\[Mu]$$, $CellContext`\[Mu]$56357$$, 0], 
+        Hold[$CellContext`\[Sigma]$$, $CellContext`\[Sigma]$56358$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Plot[
+        PDF[
+         NormalDistribution[$CellContext`\[Mu]$$, $CellContext`\[Sigma]$$], \
+$CellContext`x], {$CellContext`x, -6, 6}, Filling -> Axis], 
+      "Specifications" :> {{$CellContext`\[Mu]$$, 0, 3, 
+         1}, {$CellContext`\[Sigma]$$, 1, 10, 0.25}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{405., {171., 177.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{{3.7323704413582287`*^9, 3.7323704763693027`*^9}, {
+   3.732370527521686*^9, 3.732370557469193*^9}, 3.732370950281952*^9, 
+   3.732371005905805*^9, {3.732371148333705*^9, 3.732371156618524*^9}, 
+   3.7323711972703133`*^9, {3.73237123078026*^9, 
+   3.732371244189906*^9}},ExpressionUUID->"7dc93dd3-e3e6-4e56-8001-\
+6440620a08a3"]
+}, Open  ]],
+
+Cell[TextData[{
+ "\nFor any X ~ N(\[Micro], ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["\[Sigma]", "2"], TraditionalForm]],ExpressionUUID->
+  "5f0f876b-889b-4d57-b896-16ac90e77266"],
+ "), Z = ",
+ Cell[BoxData[
+  FormBox[
+   FractionBox[
+    RowBox[{"X", "-", "\[Micro]"}], "\[Sigma]"], TraditionalForm]],
+  ExpressionUUID->"930c33f0-f912-4ec0-8a2f-d7497b64da2d"],
+ " and Z ~ N(0,1) which is known as the",
+ StyleBox[" standard normal distribution. ",
+  FontSlant->"Italic"],
+ "The Z values are called standardized values or standard scores. \n\nThe \
+value of Z is actually the distance measured as the number of standard \
+deviations that the chosen value of X is from its mean. For any normal \
+distribution (i.e. regardless of its mean and standard deviation), the area \
+under the curve of the p.d.f will always be the same for any particular \
+number of standard deviations from the mean. For example, any value that is 2 \
+standard deviations above its mean, (i.e. Z = 2), the area under the p.d.f. \
+below or to the left of that value is 0.9772. This area is also the value of \
+the c.d.f. for the standard normal at 2, i.e ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["F", "Z"], TraditionalForm]],ExpressionUUID->
+  "380eb55a-d61c-4fff-9909-7bdfa687aa88"],
+ "(2) = 0.9772\n\nNOTE: The normal distribution describes probabilities for a \
+continuous r.v. However, it is also sometimes used to approximate \
+probabilities for certain discrete distributions, such as the binomial, \
+negative binomial and Poisson distributions."
+}], "Text",
+ CellChangeTimes->{{3.730590623446059*^9, 3.730590850876161*^9}, {
+  3.730590894194059*^9, 3.7305909820315323`*^9}, {3.730721837782673*^9, 
+  3.7307218415349503`*^9}},ExpressionUUID->"4c813ce9-0541-4e27-9e0b-\
+a2e4863ab179"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Multinomial Distribution: ", "Section",
+ CellChangeTimes->{{3.730590994911578*^9, 
+  3.730591010431532*^9}},ExpressionUUID->"544ca357-c625-43a1-99b6-\
+09313584d28d"],
+
+Cell[TextData[{
+ "If a given trial may result in one of k possible outcomes, ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["E", "I"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "c221e7bf-3e8f-435f-b459-7508b64e1a8c"],
+ ", ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["E", "2"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "1b67c7df-3b79-4a19-8eaf-7f1a119b6c15"],
+ ", ..., ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["E", "k"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "d0b042d6-41f8-47c6-86ec-08558f080d3c"],
+ ", with probability ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["p", "1"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "739adabc-62dd-4a07-861b-6ba99c59ce31"],
+ ",",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"  ", 
+    SubscriptBox["p", "2"]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "a1a7e37e-83a8-4a9c-948a-4f0ab0796549"],
+ ", ..., ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["p", "k"], ","}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "f279ead7-3e2b-42be-adc6-cf46bdd23dd7"],
+ " then the probability distribution of the random variables, ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["X", "I"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "b8d16c1b-5634-4f9b-b720-cad8c8f5de7c"],
+ ", ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["X", "2"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "b7821ced-9be5-4f84-8b92-dd8ad5224eff"],
+ ", ..., ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["X", "k"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "97cfa9ff-3240-47a8-ba8b-35c8827dc083"],
+ ",  representing the number of occurrences of ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["E", "I"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "91e52eee-4e2f-404d-ba78-fe3f7c750414"],
+ ", ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["E", "2"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "0ea6af0f-c114-4e95-80ed-0a5489bf1581"],
+ ", ..., ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["E", "k"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "aa46d04e-6be5-4d31-bb9a-ecea0e51c063"],
+ ", in ",
+ StyleBox["n ",
+  FontSlant->"Italic"],
+ " independent trials is:"
+}], "Subsection",
+ CellChangeTimes->{{3.730591023685947*^9, 
+  3.73059125953369*^9}},ExpressionUUID->"1c50d894-bd48-4e6a-81b0-\
+5a45b442f834"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["multinomial p.d.f.",
+ FontSlant->"Italic"]], "Subsubtitle",
+ CellChangeTimes->{{3.730591274312282*^9, 
+  3.73059128195177*^9}},ExpressionUUID->"eb6a3bf4-6ca0-471b-ab21-\
+7f9d17ad2432"],
+
+Cell[TextData[{
+ StyleBox["f( ",
+  FontSize->18],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["X", "I"], TraditionalForm]],
+  FontSize->18,ExpressionUUID->"a0e6397c-ab76-4ff1-9a46-98027fd73c2f"],
+ StyleBox[", ",
+  FontSize->18],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["X", "2"], TraditionalForm]],
+  FontSize->18,ExpressionUUID->"5fd99118-bdda-4685-8864-5c6fa68288fa"],
+ StyleBox[", ..., ",
+  FontSize->18],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["X", "k"], TraditionalForm]],
+  FontSize->18,ExpressionUUID->"edf21dd9-daf2-42a8-afd7-a30dc864687a"],
+ StyleBox[";  n, ",
+  FontSize->18],
+ Cell[BoxData[
+  FormBox[
+   RowBox[{" ", 
+    SubscriptBox["p", "1"]}], TraditionalForm]],
+  FontSize->18,ExpressionUUID->"4b41494d-b90f-4932-9b33-f111eeef5c84"],
+ StyleBox[",",
+  FontSize->18],
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"  ", 
+    SubscriptBox["p", "2"]}], TraditionalForm]],
+  FontSize->18,ExpressionUUID->"268b985e-b5ea-4619-966d-577ffec10823"],
+ StyleBox[", ..., ",
+  FontSize->18],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["p", "k"], TraditionalForm]],
+  FontSize->18,ExpressionUUID->"6fbce49c-bb82-49e0-b3c4-8c27df3f1ad6"],
+ StyleBox[") = ",
+  FontSize->18],
+ Cell[BoxData[
+  FormBox[
+   FractionBox[
+    RowBox[{"n", "!"}], 
+    RowBox[{
+     RowBox[{
+      SubscriptBox["X", "I"], "!"}], ",", 
+     RowBox[{
+      SubscriptBox["X", "2"], "!"}], ",", "...", ",", 
+     RowBox[{
+      SubscriptBox["X", "k"], "!"}]}]], TraditionalForm]],
+  FontSize->18,ExpressionUUID->"c138237a-ff83-434e-91c5-6e246a15c3ac"],
+ Cell[BoxData[
+  FormBox[
+   SubsuperscriptBox["p", "1", 
+    SubscriptBox["x", "1"]], TraditionalForm]],
+  FontSize->18,ExpressionUUID->"677083c6-d2a5-412f-ade6-388f118a90b3"],
+ Cell[BoxData[
+  FormBox[
+   SubsuperscriptBox["p", "2", 
+    SubscriptBox["x", "2"]], TraditionalForm]],
+  FontSize->18,ExpressionUUID->"afce054c-fc77-4b83-925c-7bc65d869a9e"],
+ StyleBox["... ",
+  FontSize->18],
+ Cell[BoxData[
+  FormBox[
+   SubsuperscriptBox["p", "k", "x"], TraditionalForm]],
+  FontSize->18,ExpressionUUID->"e20d3d89-8b6d-4dc3-9bf7-cfb7bfc5e5d5"],
+ StyleBox["\nWhere ",
+  FontSize->18],
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    UnderoverscriptBox["\[Sum]", 
+     RowBox[{"i", "=", "1"}], "k"], 
+    SubscriptBox["x", "i"]}], TraditionalForm]],
+  FontSize->18,ExpressionUUID->"9010949c-dc96-461c-a9dc-1aa56480d72f"],
+ StyleBox["= n and ",
+  FontSize->18],
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    UnderoverscriptBox["\[Sum]", 
+     RowBox[{"i", "=", "1"}], "k"], 
+    SubscriptBox["p", "k"]}], TraditionalForm]],
+  FontSize->18,ExpressionUUID->"abc8c213-2104-4ce8-a8dc-43d565872ed4"],
+ StyleBox["= 1. ",
+  FontSize->18],
+ "\n\nSince the multinomial is a joint p.d.f. for k random variables, it is \
+also called a multivariate distribution. The binomial and hypergeometric \
+distributions are univariate. "
+}], "Text",
+ CellChangeTimes->{{3.730591303326676*^9, 
+  3.7305916893719263`*^9}},ExpressionUUID->"2bf67f5f-69c9-4e1b-b95b-\
+635caf697a3b"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"DiscretePlot3D", "[", 
+    RowBox[{
+     RowBox[{"PDF", "[", 
+      RowBox[{
+       RowBox[{"MultinomialDistribution", "[", 
+        RowBox[{"n", ",", 
+         RowBox[{"{", 
+          RowBox[{"0.6", ",", "0.4"}], "}"}]}], "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"x", ",", "y"}], "}"}]}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"y", ",", "0", ",", "n"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "0", ",", "n"}], "}"}], ",", 
+     RowBox[{"ExtentSize", "\[Rule]", "0.5"}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"n", ",", "3", ",", "6", ",", "1"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.7323780041130323`*^9, 3.732378047790958*^9}, {
+  3.7323780984865513`*^9, 3.732378098968766*^9}, {3.732378212399338*^9, 
+  3.732378214375258*^9}, {3.732378244748867*^9, 
+  3.732378246178361*^9}},ExpressionUUID->"59a2f088-3c09-46cd-983d-\
+f0b65da7efa1"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`n$$ = 4, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`n$$], 3, 6, 1}}, Typeset`size$$ = {
+    360., {142., 147.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`n$108515$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`n$$ = 3}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`n$$, $CellContext`n$108515$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> DiscretePlot3D[
+        PDF[
+         MultinomialDistribution[$CellContext`n$$, {0.6, 
+          0.4}], {$CellContext`x, $CellContext`y}], {$CellContext`y, 
+         0, $CellContext`n$$}, {$CellContext`x, 0, $CellContext`n$$}, 
+        ExtentSize -> 0.5], "Specifications" :> {{$CellContext`n$$, 3, 6, 1}},
+       "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{405., {187., 193.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{{3.732377985012871*^9, 3.73237801050552*^9}, {
+   3.732378040824564*^9, 3.7323780494319067`*^9}, 3.732378100870038*^9, 
+   3.732378216789558*^9, 
+   3.7323782481102667`*^9},ExpressionUUID->"a1a5616a-2859-48b5-a33e-\
+14b552c9f813"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["example:", "Subsection",
+ CellChangeTimes->{{3.7305917008850718`*^9, 
+  3.7305917023230667`*^9}},ExpressionUUID->"73349d4f-c3d1-4bbb-befe-\
+9dbed022c713"],
+
+Cell["\<\
+Consider rolling a pair of dice 6 times.  What is the probability of \
+obtaining a 7 or 11 twice, a double once, and any other combinations 3 times?\
+\
+\>", "Text",
+ CellChangeTimes->{{3.730591708627261*^9, 
+  3.730591747096483*^9}},ExpressionUUID->"629d6754-41bb-4cdc-9fc8-\
+034899493ad3"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Negative binomial: ", "Section",
+ CellChangeTimes->{{3.730590994911578*^9, 3.730591010431532*^9}, {
+  3.730591751008988*^9, 
+  3.7305917539318027`*^9}},ExpressionUUID->"05b569e3-03c0-473d-8128-\
+2ae6eb9d8067"],
+
+Cell[TextData[{
+ "If repeated independent trials can result in success with probability ",
+ StyleBox["p ",
+  FontSlant->"Italic"],
+ " and failure otherwise, the probability distribution of the random variable \
+X, the number of trials until the ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["k", "th"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "72b25217-f0b7-439e-a0a9-ee94fef7ac13"],
+ "success is:"
+}], "Subsection",
+ CellChangeTimes->{{3.730591023685947*^9, 3.73059125953369*^9}, {
+  3.730591759199616*^9, 
+  3.730591840521999*^9}},ExpressionUUID->"b21b1ef2-f905-495a-8fd3-\
+6c1550d2a4d4"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["negative binomial p.d.f.",
+ FontSlant->"Italic"]], "Subsubtitle",
+ CellChangeTimes->{{3.730591274312282*^9, 3.73059128195177*^9}, {
+  3.7305918607377453`*^9, 
+  3.730591865511664*^9}},ExpressionUUID->"b6ee3e5a-6568-477f-a2c2-\
+13eac4c04834"],
+
+Cell[TextData[{
+ StyleBox["f( x ) = b*( x ;",
+  FontSize->18],
+ StyleBox[" k,",
+  FontSize->18,
+  FontSlant->"Italic"],
+ StyleBox[" p)  =  ",
+  FontSize->18],
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"(", GridBox[{
+       {
+        RowBox[{"x", " ", "-", " ", "1"}]},
+       {
+        RowBox[{"k", " ", "-", " ", "1"}]}
+      }], ")"}], "  "}], TraditionalForm]],
+  FormatType->"TraditionalForm",
+  FontSize->18,ExpressionUUID->"2b6ac9e8-846d-4106-8067-6aa5c9b76887"],
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["p", "k"], TraditionalForm]],
+  FormatType->"TraditionalForm",
+  FontSize->18,ExpressionUUID->"7659f97a-9bd3-40b2-9b6f-b959eec65634"],
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["q", 
+    RowBox[{"(", 
+     RowBox[{"x", "-", "k"}], ")"}]], TraditionalForm]],
+  FormatType->"TraditionalForm",
+  FontSize->18,ExpressionUUID->"74e5e5ae-064b-4b6a-93d9-a64ef74219c3"],
+ StyleBox["\nfor x = ",
+  FontSize->18],
+ StyleBox["k, k+1,",
+  FontSize->18,
+  FontSlant->"Italic"],
+ StyleBox[" ... etc. \n",
+  FontSize->18],
+ "\nFor a negative binomial r.v., ",
+ StyleBox["E[X] = k/p , Var[X] = k q / ",
+  FontSlant->"Italic"],
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["p", "2"], TraditionalForm]],
+  FormatType->"TraditionalForm",
+  FontSlant->"Italic",ExpressionUUID->
+  "acf72454-92d6-421b-ab0d-7f444327a95c"],
+ " \nA special case of the negative binomial is when k=1, this particular \
+negative binomial is also called a geometric distribution. "
+}], "Text",
+ CellChangeTimes->{{3.730659671408312*^9, 3.7306597773317623`*^9}, {
+  3.730659809623517*^9, 3.7306598570480623`*^9}, {3.73065988871647*^9, 
+  3.73065991821126*^9}, {3.730659964592516*^9, 3.730659973935279*^9}, {
+  3.730660136103797*^9, 3.7306601719056683`*^9}, {3.730660209903364*^9, 
+  3.7306602114001637`*^9}},ExpressionUUID->"0d7aa11d-7d4f-497f-bcce-\
+5e1d6f65fdfe"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["geometric p.d.f.",
+ FontSlant->"Italic"]], "Subsubtitle",
+ CellChangeTimes->{{3.730591274312282*^9, 3.73059128195177*^9}, {
+  3.7305918607377453`*^9, 3.730591865511664*^9}, {3.730660224213141*^9, 
+  3.7306602259046707`*^9}},ExpressionUUID->"8ed00bd5-ac36-41e9-940b-\
+126d08309990"],
+
+Cell[TextData[{
+ StyleBox["f(x) = b * (x ; 1, p ) = ",
+  FontSize->18],
+ StyleBox["p q",
+  FontSize->18,
+  FontSlant->"Italic"],
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["", 
+    RowBox[{"(", 
+     RowBox[{"x", "-", "1"}], ")"}]], TraditionalForm]],
+  FormatType->"TraditionalForm",
+  FontSize->18,
+  FontSlant->"Italic",ExpressionUUID->"1a3ec34f-32fb-4a5d-86dd-29de5f1be257"]
+}], "Text",
+ CellChangeTimes->{{3.730660242745707*^9, 
+  3.7306602815836573`*^9}},ExpressionUUID->"fd536c83-4c2d-4c6c-9122-\
+af0234249a70"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"DiscretePlot", "[", 
+    RowBox[{
+     RowBox[{"PDF", "[", 
+      RowBox[{
+       RowBox[{"NegativeBinomialDistribution", "[", 
+        RowBox[{"2", ",", "p"}], "]"}], ",", "k"}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"k", ",", "25"}], "}"}], ",", 
+     RowBox[{"PlotMarkers", "\[Rule]", "Automatic"}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"p", ",", "0.1", ",", "0.3", ",", "0.25"}], "}"}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.732378819596746*^9, 
+  3.732378855564303*^9}},ExpressionUUID->"863daeac-36dc-4cfa-a4e0-\
+16b3d10874cb"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`p$$ = 0.3, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`p$$], 0.1, 0.3, 0.25}}, Typeset`size$$ = {
+    360., {110., 115.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`p$120575$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`p$$ = 0.1}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`p$$, $CellContext`p$120575$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> DiscretePlot[
+        PDF[
+         NegativeBinomialDistribution[
+         2, $CellContext`p$$], $CellContext`k], {$CellContext`k, 25}, 
+        PlotMarkers -> Automatic], 
+      "Specifications" :> {{$CellContext`p$$, 0.1, 0.3, 0.25}}, 
+      "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{405., {155., 161.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.7323788154970016`*^9, 
+  3.7323788574262743`*^9},ExpressionUUID->"f864b01e-e7c2-4e16-a566-\
+f7b823426786"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["example:",
+ FontSlant->"Italic"]], "Subsubsection",
+ CellChangeTimes->{{3.730660316400045*^9, 
+  3.730660318237792*^9}},ExpressionUUID->"ced0042f-c54c-429f-b1d5-\
+9d72ce5e16f0"],
+
+Cell[TextData[{
+ StyleBox["To meet his yearly quota, a manager must sell 750 units.\n",
+  FontWeight->"Bold"],
+ "(a) If his success rate is one in ten trials, what is the expected number \
+of trials in order for him to meet his quota?"
+}], "Text",
+ CellChangeTimes->{{3.730660359847446*^9, 3.7306605906627817`*^9}, {
+  3.732376373267878*^9, 
+  3.732376380709518*^9}},ExpressionUUID->"0c0e3ce0-43f0-44b7-b757-\
+de9b14b50387"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"RandomVariate", "[", 
+   RowBox[{
+    RowBox[{"GeometricDistribution", "[", ".9", "]"}], ",", "20"}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"ListPlot", "[", 
+  RowBox[{"%", ",", 
+   RowBox[{"Filling", "\[Rule]", "Axis"}]}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Mean", "[", 
+  RowBox[{"GeometricDistribution", "[", ".9", "]"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.732376402566245*^9, 3.732376406530958*^9}, {
+  3.732376442595562*^9, 3.732376445849688*^9}, {3.7323764939845457`*^9, 
+  3.732376569024062*^9}, {3.732376600625798*^9, 
+  3.732376606134088*^9}},ExpressionUUID->"906702ec-7bfa-469b-9da4-\
+8d91ddad76e2"],
+
+Cell[BoxData[
+ GraphicsBox[{{}, GraphicsComplexBox[CompressedData["
+1:eJxTTMoPSmViYGDQAmIQDQEf7BlQgQMqlwONL4DGF0HjS6DxZdD4Cmh8JTS+
+ChpfDcqHuVMDTV4Lja+DxtdD4xug8Q3R+EZofGM0vgmae9RwyMPAaPii8okP
+XwBVtRhw
+    "], {{{}, {}, {}, {}, 
+      {RGBColor[0.368417, 0.506779, 0.709798], Opacity[0.3], 
+       LineBox[{21, 11}], LineBox[{22, 20}]}}, {{}, 
+      {RGBColor[0.368417, 0.506779, 0.709798], PointSize[
+       0.012833333333333334`], AbsoluteThickness[1.6], 
+       PointBox[{23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 
+        38, 39, 40, 41, 42}]}, {}}}], {}, {}, {}, {}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{None, None},
+  AxesOrigin->{0., 0},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImagePadding->All,
+  Method->{"CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+        (Identity[#]& )[
+         Part[#, 1]], 
+        (Identity[#]& )[
+         Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+        (Identity[#]& )[
+         Part[#, 1]], 
+        (Identity[#]& )[
+         Part[#, 2]]}& )}},
+  PlotRange->{{0., 20.}, {0, 1.}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{{3.732376387824134*^9, 3.732376413563417*^9}, 
+   3.732376447560235*^9, {3.732376504960059*^9, 
+   3.73237660854475*^9}},ExpressionUUID->"647c930d-5393-4a62-b455-\
+4d8074ed2393"],
+
+Cell[BoxData["0.11111111111111116`"], "Output",
+ CellChangeTimes->{{3.732376387824134*^9, 3.732376413563417*^9}, 
+   3.732376447560235*^9, {3.732376504960059*^9, 
+   3.732376608598879*^9}},ExpressionUUID->"e619c747-fb54-4fb1-a71a-\
+4f6d2dd76f06"]
+}, Open  ]],
+
+Cell[TextData[{
+ "\n(b) If he has 20 people working for him and each independently can make \
+300 trials, what is the probability that he will achieve his quota? (assume \
+constant success rate of 1/10 across all workers)\n\n",
+ StyleBox["To increase his probability of making quota, the manager invests \
+in an ad campaign designed to increase his success rate to one in seven. \n",
+  FontWeight->"Bold"],
+ "(c) How will this revised success rate effect his chances?"
+}], "Text",
+ CellChangeTimes->{{3.730660359847446*^9, 3.7306605906627817`*^9}, 
+   3.732376373267878*^9},ExpressionUUID->"db556f88-aa58-4c96-ac2d-\
+5c79a88520ae"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"RandomVariate", "[", 
+   RowBox[{
+    RowBox[{"GeometricDistribution", "[", "0.3", "]"}], ",", "20"}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"ListPlot", "[", 
+  RowBox[{"%", ",", 
+   RowBox[{"Filling", "\[Rule]", "Axis"}]}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Mean", "[", 
+  RowBox[{"GeometricDistribution", "[", "0.3", "]"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.73237648606876*^9, 3.732376489318062*^9}, {
+  3.732376615763648*^9, 
+  3.732376621263822*^9}},ExpressionUUID->"a6d6a201-f126-471c-a548-\
+6c17d30c336f"],
+
+Cell[BoxData[
+ GraphicsBox[{{}, GraphicsComplexBox[CompressedData["
+1:eJztks0KQFAQRm9WlhYWFhZIkiR/2Zpn8AjK2qt7BMRdzInyAKZu05mv5tzF
+xPM6LY4xZjje2a/axqtHcg/EqHLB3s3+Sw/AoTx77DwR7Unhy0R7c9HzAvtL
++CvkNfY38LbIO/yvR2732vKQ++AAHIIjcALOwDm4AJfgCtyAO/B/H9r7/T52
+Weknqw==
+    "], {{{}, {}, {}, {}, 
+      {RGBColor[0.368417, 0.506779, 0.709798], Opacity[0.3], LineBox[{21, 1}],
+        LineBox[{22, 4}], LineBox[{23, 5}], LineBox[{24, 6}], 
+       LineBox[{25, 7}], LineBox[{26, 8}], LineBox[{27, 9}], 
+       LineBox[{28, 11}], LineBox[{29, 12}], LineBox[{30, 13}], 
+       LineBox[{31, 14}], LineBox[{32, 15}], LineBox[{33, 17}], 
+       LineBox[{34, 19}]}}, {{}, 
+      {RGBColor[0.368417, 0.506779, 0.709798], PointSize[
+       0.012833333333333334`], AbsoluteThickness[1.6], 
+       PointBox[{35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 
+        50, 51, 52, 53, 54}]}, {}}}], {}, {}, {}, {}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{None, None},
+  AxesOrigin->{0., 0},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImagePadding->All,
+  Method->{"CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+        (Identity[#]& )[
+         Part[#, 1]], 
+        (Identity[#]& )[
+         Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+        (Identity[#]& )[
+         Part[#, 1]], 
+        (Identity[#]& )[
+         Part[#, 2]]}& )}},
+  PlotRange->{{0., 20.}, {0, 11.}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{3.732376510524024*^9, 
+  3.732376622082823*^9},ExpressionUUID->"6f44f587-2280-458d-9424-\
+92f44ac889cd"],
+
+Cell[BoxData["2.3333333333333335`"], "Output",
+ CellChangeTimes->{3.732376510524024*^9, 
+  3.7323766221152077`*^9},ExpressionUUID->"684a48ea-0638-4068-b6e7-\
+8fd1fc06496c"]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.732376342342568*^9, 
+  3.732376371008383*^9}},ExpressionUUID->"6e2b45ce-17ad-4d93-884f-\
+2d523ab22199"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Poisson Distribution", "Section",
+ CellChangeTimes->{{3.7306606168205*^9, 
+  3.730660639585989*^9}},ExpressionUUID->"26394c7d-b492-49ae-bdfa-\
+c9460795f009"],
+
+Cell["Characteristics of a Poisson Process", "Text",
+ CellChangeTimes->{{3.7306606498860617`*^9, 
+  3.730660662470162*^9}},ExpressionUUID->"e4f738dd-b689-421e-bc65-\
+588b1c3e40e0"],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+The number of occurrences in one interval of time ( or space ) is unaffected \
+by the number of occurrences in any other nonoverlapping interval of time ( \
+or space).\
+\>", "ItemNumbered",
+ CellChangeTimes->{{3.730660680692624*^9, 3.730660687778454*^9}, {
+  3.7306607494814167`*^9, 
+  3.7306607974729958`*^9}},ExpressionUUID->"8a718ecd-deb5-426f-8ac4-\
+f31aec4d639e"],
+
+Cell["\<\
+The expected number of occurrences over any interval of time ( or space ) is \
+proportional to the size of the interval of time ( or space )\
+\>", "ItemNumbered",
+ CellChangeTimes->{{3.730660680692624*^9, 3.730660687778454*^9}, {
+  3.7306607494814167`*^9, 
+  3.730660831527804*^9}},ExpressionUUID->"b13052a0-366b-4d10-99c0-\
+c6062cce2d65"],
+
+Cell["\<\
+Events cannot occur simultaneously. [i.e. there is an interval of time ( or \
+space ) sufficiently small that the probability of more than one occurrence \
+in that interval is negligible.]\
+\>", "ItemNumbered",
+ CellChangeTimes->{{3.730660680692624*^9, 3.730660687778454*^9}, {
+  3.7306607494814167`*^9, 3.7306607736555643`*^9}, {3.730660898865417*^9, 
+  3.730660901700294*^9}},ExpressionUUID->"e6b3f1ea-c7fa-445a-afb2-\
+255cf1bf3b9a"]
+}, Open  ]],
+
+Cell["\<\
+The random variable X, defined as the number of occurrences in a specified \
+interval of time ( or space ) in a Poisson process, has the following p.d.f.\
+\>", "Text",
+ CellChangeTimes->{{3.730660915961151*^9, 
+  3.7306609636476803`*^9}},ExpressionUUID->"717c3ba1-7368-4797-8adc-\
+37d9ec528868"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["Poisson p.d.f.",
+ FontSlant->"Italic"]], "Subsubtitle",
+ CellChangeTimes->{{3.730591274312282*^9, 3.73059128195177*^9}, {
+  3.7305918607377453`*^9, 3.730591865511664*^9}, {3.730660224213141*^9, 
+  3.7306602259046707`*^9}, {3.7306609894615927`*^9, 
+  3.7306609906684523`*^9}},ExpressionUUID->"dc2e7e01-e8bc-4a97-9bd8-\
+3f2c844f7dda"],
+
+Cell[TextData[{
+ StyleBox["f(x) = ",
+  FontSize->18],
+ Cell[BoxData[
+  FormBox[
+   FractionBox[
+    RowBox[{
+     SuperscriptBox["e", 
+      RowBox[{"-", "\[Lambda]"}]], 
+     SuperscriptBox["\[Lambda]", "x"]}], 
+    RowBox[{"x", "!"}]], TraditionalForm]],
+  FormatType->"TraditionalForm",
+  FontSize->18,ExpressionUUID->"88cb13af-20b8-4bef-bf29-7e65febc4ba1"],
+ StyleBox[" for x = 0, 1, 2, ... etc.\nWhere e = 2.71828.... (the base of the \
+natural logarithm) and \[Lambda] = the average number of occurrences for a \
+specified interval of time ( or space ).",
+  FontSize->18]
+}], "Text",
+ CellChangeTimes->{{3.730660999643347*^9, 
+  3.7306611689432*^9}},ExpressionUUID->"9ed2be07-fb4e-46c7-a3d3-3ca48675d00e"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Clear", "[", "n", "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"DiscretePlot", "[", 
+    RowBox[{
+     RowBox[{"PDF", "[", 
+      RowBox[{
+       RowBox[{"PoissonDistribution", "[", "n", "]"}], ",", "k"}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"k", ",", "0", ",", "20"}], "}"}], ",", 
+     RowBox[{"PlotRange", "\[Rule]", "All"}], ",", 
+     RowBox[{"PlotMarkers", "\[Rule]", "Automatic"}]}], "]"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{"n", ",", "5", ",", "10"}], "}"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.732376913602891*^9, 
+  3.732377004965415*^9}},ExpressionUUID->"34fbd3fd-fc28-4049-a87f-\
+9ef8aaa89efb"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`n$$ = 5., Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`n$$], 5, 10}}, Typeset`size$$ = {360., {110., 115.}}, 
+    Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    True, $CellContext`n$100537$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`n$$ = 5}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`n$$, $CellContext`n$100537$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> DiscretePlot[
+        PDF[
+         PoissonDistribution[$CellContext`n$$], $CellContext`k], \
+{$CellContext`k, 0, 20}, PlotRange -> All, PlotMarkers -> Automatic], 
+      "Specifications" :> {{$CellContext`n$$, 5, 10}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{405., {155., 161.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{{3.732376901779215*^9, 
+  3.7323770069249763`*^9}},ExpressionUUID->"b6af79ec-bc99-46ec-8557-\
+393a63f302c2"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["examples of Poisson r.v.\[CloseCurlyQuote]s:",
+ FontSlant->"Italic"]], "Subsubsection",
+ CellChangeTimes->{{3.730660316400045*^9, 3.730660318237792*^9}, {
+  3.730661180535236*^9, 
+  3.730661185725156*^9}},ExpressionUUID->"5e6f5499-7641-4d18-8d60-\
+8f8aba5131b7"],
+
+Cell[CellGroupData[{
+
+Cell[" number of flaws in a yard of fabric,", "Subitem",
+ CellChangeTimes->{{3.7306612494524727`*^9, 
+  3.7306612605360327`*^9}},ExpressionUUID->"433451d2-4f10-4a9f-8492-\
+606fd298431e"],
+
+Cell["number of vacancies on the Supreme Court per year", "Subitem",
+ CellChangeTimes->{{3.7306612494524727`*^9, 
+  3.7306612748700314`*^9}},ExpressionUUID->"6019729b-5552-40ad-bfd8-\
+ae5cc93fa499"],
+
+Cell["number typing errors per page", "Subitem",
+ CellChangeTimes->{{3.7306612494524727`*^9, 
+  3.7306612817557096`*^9}},ExpressionUUID->"3a54e694-7c60-4c8f-b398-\
+e73eca22cc9f"],
+
+Cell["number of days school is closed due to snowstorms", "Subitem",
+ CellChangeTimes->{{3.7306612494524727`*^9, 
+  3.730661289677544*^9}},ExpressionUUID->"59bc7fbf-6dc9-4950-9a82-\
+26fc2e9afff9"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Exponential Distribution", "Section",
+ CellChangeTimes->{{3.7306606168205*^9, 3.730660639585989*^9}, {
+  3.7306613081830063`*^9, 
+  3.730661311638686*^9}},ExpressionUUID->"8b992727-ca5f-43e0-aa8e-\
+86025bbd79ab"],
+
+Cell["\<\
+Consider a continuous r.v. T such that T measures the length of time between \
+successive occurences of an event in a Poisson process. What is Pr {T > t} ?\
+\>", "Text",
+ CellChangeTimes->{{3.730661318018775*^9, 
+  3.7306613697196608`*^9}},ExpressionUUID->"658e49bf-c8ff-4d91-bbb2-\
+3447efb1fcef"],
+
+Cell["P { T > t } = Pr { 0 occurrences in time t }", "Text",
+ CellChangeTimes->{{3.730661382863845*^9, 
+  3.7306614197878447`*^9}},ExpressionUUID->"a85d3a0e-7c8b-462c-b33e-\
+3e8955a802df"],
+
+Cell["= Pr{ X = 0, in time t }", "Text",
+ CellChangeTimes->{{3.730661426201453*^9, 
+  3.730661497571351*^9}},ExpressionUUID->"c86d74d2-b8fa-48d7-a2f3-\
+ff2f723add7c"],
+
+Cell[TextData[{
+ StyleBox["= ",
+  FontSize->18],
+ Cell[BoxData[
+  FormBox[
+   FractionBox[
+    SuperscriptBox[
+     RowBox[{
+      SuperscriptBox["e", 
+       RowBox[{"-", "\[Lambda]t"}]], "(", "\[Lambda]t", ")"}], "0"], 
+    RowBox[{"0", "!"}]], TraditionalForm]],
+  FormatType->"TraditionalForm",
+  FontSize->18,ExpressionUUID->"5db38145-5149-4524-9b17-4988becbeca4"]
+}], "Text",
+ CellChangeTimes->{{3.730661505202622*^9, 3.730661536270075*^9}, {
+  3.730661598902133*^9, 
+  3.73066166821471*^9}},ExpressionUUID->"5d28305d-a556-4d8f-9ee2-\
+166f07bd3243"],
+
+Cell[TextData[{
+ StyleBox["= e",
+  FontSize->18],
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["", 
+    RowBox[{"-", "\[Lambda]t"}]], TraditionalForm]],
+  FormatType->"TraditionalForm",
+  FontSize->18,ExpressionUUID->"1ef52d21-da43-4202-bd36-f50c35e9f8a5"]
+}], "Text",
+ CellChangeTimes->{{3.730661674757567*^9, 
+  3.730661709260208*^9}},ExpressionUUID->"43dc91f9-af90-47ed-9e5b-\
+298493080e16"],
+
+Cell[TextData[{
+ "Note: in this case, \[Lambda] represents the average number of occurrences \
+in one unit of time. Therefore, ",
+ StyleBox["\[Lambda]t",
+  FontSlant->"Italic"],
+ "  represents the average number of occurrences in time ",
+ StyleBox["t",
+  FontSlant->"Italic"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.730661733370001*^9, 
+  3.730661781009265*^9}},ExpressionUUID->"9258e330-472d-4911-b6d2-\
+f6d1b6d72b2a"],
+
+Cell[TextData[{
+ StyleBox["Therefore: Pr { T < t } = 1 - P { T > t } = 1 - e",
+  FontSize->18],
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SuperscriptBox["", 
+     RowBox[{"-", "\[Lambda]t"}]], "."}], TraditionalForm]],
+  FormatType->"TraditionalForm",
+  FontSize->18,ExpressionUUID->"0d599bef-a09c-41ca-99a7-71fd1780c74a"]
+}], "Text",
+ CellChangeTimes->{{3.730661794275301*^9, 3.730661861057472*^9}, {
+  3.7306618958625927`*^9, 
+  3.730661912442039*^9}},ExpressionUUID->"a458689f-2c57-45c5-be38-\
+ce9dbb4e3dbd"],
+
+Cell[TextData[{
+ StyleBox["If we let \[Beta] = ",
+  FontSize->18],
+ Cell[BoxData[
+  FormBox[
+   FractionBox[
+    RowBox[{"1", " "}], "\[Lambda]"], TraditionalForm]],
+  FormatType->"TraditionalForm",
+  FontSize->18,ExpressionUUID->"b21606b7-6e69-4bef-b4e9-738105482888"],
+ StyleBox["or \[Lambda] = ",
+  FontSize->18],
+ Cell[BoxData[
+  FormBox[
+   FractionBox["1", "\[Beta]"], TraditionalForm]],
+  FormatType->"TraditionalForm",
+  FontSize->18,ExpressionUUID->"10e17beb-63bc-4aee-8f4b-8638436e47e8"],
+ StyleBox[", then\n\tPr { T \[LessEqual] t } = F(t) = 1 - ",
+  FontSize->18],
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["e", 
+    FractionBox[
+     RowBox[{"-", "t"}], "\[Beta]"]], TraditionalForm]],
+  FormatType->"TraditionalForm",
+  FontSize->18,ExpressionUUID->"63c6c070-3946-4c09-82e9-480f49cc8dbf"]
+}], "Text",
+ CellChangeTimes->{{3.730661919208932*^9, 
+  3.730662110034638*^9}},ExpressionUUID->"7c6dbdef-dba0-4868-9d5d-\
+9defe1e6cf65"],
+
+Cell[TextData[{
+ "The random variable T has an exponential distribution with parameter \
+\[Beta] or mean of \[Beta], i.e. E[T] = \[Beta], also Var [T] = ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SuperscriptBox["\[Beta]", 
+     RowBox[{" ", "2"}]], "."}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "f26c400f-099a-4f39-9ea4-adf60d4f2557"]
+}], "Text",
+ CellChangeTimes->{{3.730662130203356*^9, 3.730662141164135*^9}, {
+  3.730662189293041*^9, 3.7306622109287243`*^9}, {3.730662295614707*^9, 
+  3.73066235346023*^9}},ExpressionUUID->"4276a775-5977-4b84-ad71-\
+53e99b8b2da4"],
+
+Cell["\<\
+The p.d.f. of the random variable T having an exponential distribution is\
+\>", "Text",
+ CellChangeTimes->{{3.7306623693924417`*^9, 
+  3.730662386891452*^9}},ExpressionUUID->"d103b6a4-5236-4bad-8217-\
+2777e115b53e"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["exponential p.d.f.",
+ FontSlant->"Italic"]], "Subsubtitle",
+ CellChangeTimes->{{3.730591274312282*^9, 3.73059128195177*^9}, {
+  3.7305918607377453`*^9, 3.730591865511664*^9}, {3.730660224213141*^9, 
+  3.7306602259046707`*^9}, {3.7306609894615927`*^9, 3.7306609906684523`*^9}, {
+  3.7306624011171417`*^9, 
+  3.730662403047883*^9}},ExpressionUUID->"d5aef776-5397-44b3-b1b9-\
+6bf65eba0dcd"],
+
+Cell[TextData[{
+ StyleBox["f(t) = ",
+  FontSize->18],
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    FractionBox["1", "\[Beta]"], 
+    SuperscriptBox["e", 
+     FractionBox[
+      RowBox[{"-", "t"}], "\[Beta]"]]}], TraditionalForm]],
+  FormatType->"TraditionalForm",
+  FontSize->18,ExpressionUUID->"766f7931-8892-46c9-ba05-3be89817d3ae"],
+ StyleBox["\t    for t \[GreaterEqual] 0, \[Beta] > 0 .",
+  FontSize->18]
+}], "Text",
+ CellChangeTimes->{{3.7306624112978992`*^9, 3.7306624785936947`*^9}, {
+  3.730662514283445*^9, 
+  3.730662548652005*^9}},ExpressionUUID->"cd3432c4-3818-4159-af92-\
+f4d1aab378e3"],
+
+Cell["\<\
+To find probabilities associated with the random variable T, the \
+corresponding area under the curve of the p.d.f. must be found. This may be \
+accomplished by integrating the p.d.f. of T over the appropriate range.\
+\>", "Text",
+ CellChangeTimes->{{3.7306625560390453`*^9, 
+  3.730662600935663*^9}},ExpressionUUID->"8f2affcc-5ab6-46d0-99be-\
+d733fdb5a85a"],
+
+Cell[TextData[{
+ StyleBox["Pr { T \[LessEqual] t } = ",
+  FontSize->18],
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubsuperscriptBox["\[Integral]", 
+     RowBox[{"-", "\[Infinity]"}], "t"], 
+    RowBox[{
+     RowBox[{"f", "(", "t", ")"}], 
+     RowBox[{"\[DifferentialD]", "t"}]}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",
+  FontSize->18,ExpressionUUID->"a92e7c59-7ae5-4b79-ba57-12bfa2f2fc5a"]
+}], "Text",
+ CellChangeTimes->{{3.730662606693344*^9, 
+  3.730662704291768*^9}},ExpressionUUID->"aca12617-ee80-41d7-9e16-\
+afb3cb3407f7"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Plot", "[", 
+    RowBox[{
+     RowBox[{"PDF", "[", 
+      RowBox[{
+       RowBox[{"ExponentialDistribution", "[", "\[Lambda]", "]"}], ",", "x"}],
+       "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "0", ",", "3"}], "}"}], ",", 
+     RowBox[{"Filling", "\[Rule]", "Axis"}], ",", 
+     RowBox[{"PlotRange", "\[Rule]", "All"}]}], "]"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{"\[Lambda]", ",", 
+     RowBox[{"1", "/", "2"}], ",", "3", ",", ".5"}], "}"}]}], "]"}]], "Input",\
+
+ CellChangeTimes->{{3.732377080656989*^9, 3.732377127405813*^9}, 
+   3.7323771633889713`*^9},ExpressionUUID->"40e54191-eae3-44a1-9015-\
+1256cad16176"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`\[Lambda]$$ = 3., Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`\[Lambda]$$], 
+      Rational[1, 2], 3, 0.5}}, Typeset`size$$ = {360., {109., 113.}}, 
+    Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    True, $CellContext`\[Lambda]$103806$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`\[Lambda]$$ = Rational[1, 2]}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`\[Lambda]$$, $CellContext`\[Lambda]$103806$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Plot[
+        PDF[
+         ExponentialDistribution[$CellContext`\[Lambda]$$], $CellContext`x], \
+{$CellContext`x, 0, 3}, Filling -> Axis, PlotRange -> All], 
+      "Specifications" :> {{$CellContext`\[Lambda]$$, 
+         Rational[1, 2], 3, 0.5}}, "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{405., {154., 160.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{{3.732377073338323*^9, 3.732377129732471*^9}, 
+   3.7323771652571983`*^9},ExpressionUUID->"aa2cb5bf-38fe-4173-a3c0-\
+e0fa8ddf1d5f"]
+}, Open  ]],
+
+Cell[BoxData[","], "Input",
+ CellChangeTimes->{
+  3.732377104564196*^9},ExpressionUUID->"128af8f5-8a24-49f4-a152-\
+b71f56b17a9f"],
+
+Cell["\<\
+However, for those who have not had a course in calculus, areas can easily be \
+found using the cumulative distribution function for T, i.e. the c.d.f. of T, \
+F(t).\
+\>", "Text",
+ CellChangeTimes->{{3.730662709226192*^9, 
+  3.7306627456087008`*^9}},ExpressionUUID->"7daf9b0b-8ca8-4a78-adb0-\
+28e3828daf1a"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["exponential c.d.f.",
+ FontSlant->"Italic"]], "Subsubtitle",
+ CellChangeTimes->{{3.730591274312282*^9, 3.73059128195177*^9}, {
+  3.7305918607377453`*^9, 3.730591865511664*^9}, {3.730660224213141*^9, 
+  3.7306602259046707`*^9}, {3.7306609894615927`*^9, 3.7306609906684523`*^9}, {
+  3.7306624011171417`*^9, 3.730662403047883*^9}, {3.73066275995155*^9, 
+  3.7306627601438503`*^9}},ExpressionUUID->"450e326e-69e8-4bd5-8ece-\
+f86c3d84c4b4"],
+
+Cell[TextData[{
+ StyleBox["F(t) = Pr{ T \[LessEqual] t } = 1 - e",
+  FontSize->18],
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SuperscriptBox["", 
+     RowBox[{"-", 
+      FractionBox["t", "\[Beta]"]}]], "=", " ", 
+    RowBox[{"1", " ", "-", " ", 
+     SuperscriptBox["e", 
+      RowBox[{"-", "\[Lambda]t"}]]}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",
+  FontSize->18,ExpressionUUID->"22c06ca8-247f-4c1d-8cc2-2655c75362ef"]
+}], "Text",
+ CellChangeTimes->{{3.730662786711944*^9, 
+  3.7306628651311407`*^9}},ExpressionUUID->"995420d1-fe69-4be4-8961-\
+88e19f711d8e"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Plot", "[", 
+    RowBox[{
+     RowBox[{"CDF", "[", 
+      RowBox[{
+       RowBox[{"ExponentialDistribution", "[", "\[Lambda]", "]"}], ",", "x"}],
+       "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "0", ",", "4"}], "}"}], ",", 
+     RowBox[{"Filling", "\[Rule]", "Axis"}]}], "]"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{"\[Lambda]", ",", 
+     RowBox[{"1", "/", "2"}], ",", "3", ",", ".5"}], "}"}]}], "]"}]], "Input",\
+
+ CellChangeTimes->{{3.732377183455894*^9, 
+  3.732377235073348*^9}},ExpressionUUID->"9b988210-c45d-472b-8a5e-\
+de1b4a6b14a2"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`\[Lambda]$$ = 2.5, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`\[Lambda]$$], 
+      Rational[1, 2], 3, 0.5}}, Typeset`size$$ = {360., {109., 113.}}, 
+    Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    True, $CellContext`\[Lambda]$105321$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`\[Lambda]$$ = Rational[1, 2]}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`\[Lambda]$$, $CellContext`\[Lambda]$105321$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Plot[
+        CDF[
+         ExponentialDistribution[$CellContext`\[Lambda]$$], $CellContext`x], \
+{$CellContext`x, 0, 4}, Filling -> Axis], 
+      "Specifications" :> {{$CellContext`\[Lambda]$$, 
+         Rational[1, 2], 3, 0.5}}, "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{405., {154., 160.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{{3.7323771847550077`*^9, 
+  3.732377236392705*^9}},ExpressionUUID->"f9c17bfc-24ae-47fc-9872-\
+7e65907347ef"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Practice Examples", "Section",
+ CellChangeTimes->{{3.730663762426221*^9, 
+  3.730663766115385*^9}},ExpressionUUID->"fe86c985-3920-4a2d-9cd7-\
+cfd8b3a72762"],
+
+Cell["\<\
+In a study on \[OpenCurlyDoubleQuote]How Important Is Computer Service In \
+Retail Branch Banking?\[CloseCurlyDoubleQuote] (Authored by Maggard and S. \
+Globerson and reported in The Proceeding of the Decision Sciences Institute, \
+19 ... .. 906-8), a survey of over 50 branch bank managers revealed that an \
+\[OpenCurlyDoubleQuote]acceptable\[CloseCurlyDoubleQuote] average waiting \
+time for a customer to see a teller ranged from a low of .75 minute to a high \
+of 10 minutes. Suppose that a certain manager believes that if the mean \
+number of customers arriving over a 10-minute interval is a Poisson random \
+variable with a mean of 3, then the average waiting time for a customer will \
+be acceptable. What percentage of the time will the number of arrivals during \
+a 10- minute interval exceed three, assuming the manager\[CloseCurlyQuote]s \
+belief is correct?\
+\>", "ItemNumbered",
+ CellChangeTimes->{{3.730663061755293*^9, 3.730663070428399*^9}, {
+   3.730663106096084*^9, 3.730663186477736*^9}, {3.730663234082498*^9, 
+   3.730663235102913*^9}, {3.730663360243318*^9, 3.7306633687395363`*^9}, {
+   3.730663398947302*^9, 3.7306634930555677`*^9}, 
+   3.730721045429748*^9},ExpressionUUID->"3645fc66-ec49-4aa8-ae77-\
+b97b3019e6c3"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"N", "[", 
+  RowBox[{
+   RowBox[{"1", "-", 
+    RowBox[{"CDF", "[", 
+     RowBox[{
+      RowBox[{"PoissonDistribution", "[", "3", "]"}], ",", "3"}], "]"}]}], 
+   ",", "4"}], "]"}]], "Input",
+ CellChangeTimes->{{3.732208290160041*^9, 
+  3.7322084336989098`*^9}},ExpressionUUID->"c35a47d9-7b09-4a00-bccf-\
+081185f945fc"],
+
+Cell[BoxData["0.3527681112177687413`4."], "Output",
+ CellChangeTimes->{
+  3.7322084397014713`*^9},ExpressionUUID->"6a5a4b13-26f9-4484-8bc3-\
+b19d5e61bcd8"]
+}, Open  ]],
+
+Cell["\<\
+A salesperson has 15 major accounts. Eight of those accounts were sent the \
+wrong billing last month (they were billed too much by the accountant). The \
+salesperson wants to call her accounts to explain what happened, but she only \
+has time to call 10 of them before quitting time (assume a call to a wrongly \
+billed account takes just as long as a call to one with correct billing). If \
+she selects accounts and calls them randomly, what is the probability that \
+she will reach 6 of the 8 she wants to contact?\
+\>", "ItemNumbered",
+ CellChangeTimes->{{3.730663061755293*^9, 3.730663070428399*^9}, {
+  3.730663106096084*^9, 3.730663186477736*^9}, {3.730663234082498*^9, 
+  3.730663235102913*^9}, {3.730663360243318*^9, 3.7306633687395363`*^9}, {
+  3.730663398947302*^9, 
+  3.730663661675974*^9}},ExpressionUUID->"769b6c21-461b-4461-a25e-\
+4ab1a65a5c2f"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"N", "[", 
+  RowBox[{
+   RowBox[{"PDF", "[", 
+    RowBox[{
+     RowBox[{"HypergeometricDistribution", "[", 
+      RowBox[{"10", ",", "8", ",", "15"}], "]"}], ",", "6"}], "]"}], ",", 
+   "4"}], "]"}]], "Input",
+ CellChangeTimes->{{3.732208450905526*^9, 
+  3.732208472722046*^9}},ExpressionUUID->"2b0ca2f6-7b5c-41bc-b0e7-\
+521dcd924d44"],
+
+Cell[BoxData["0.3263403263403263403`4."], "Output",
+ CellChangeTimes->{{3.7322084661959763`*^9, 
+  3.732208473274571*^9}},ExpressionUUID->"2fb149ce-e7c5-4f20-ac43-\
+1ac572c8e959"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+A Bell\[CloseCurlyQuote]s Root Beer, Inc., soft-drink-dispensing machine has \
+been reset so that it dispenses an amount that results in a cup overflow on \
+only 1% of the 12- ounce cups that are used. The amount dispensed has a \
+standard deviation of 1 ounce and is normally distributed. What is the new \
+setting for the mean amount of soft drink that is dispensed? \
+\>", "ItemNumbered",
+ CellChangeTimes->{{3.730663061755293*^9, 3.730663070428399*^9}, {
+   3.730663106096084*^9, 3.730663186477736*^9}, {3.730663234082498*^9, 
+   3.730663235102913*^9}, {3.730663360243318*^9, 3.7306633687395363`*^9}, {
+   3.730663398947302*^9, 3.7306636767095747`*^9}, {3.7306637103571987`*^9, 
+   3.73066377134028*^9}, {3.73066381048455*^9, 3.730663828851552*^9}, 
+   3.7307211294335957`*^9, {3.7322084893072147`*^9, 
+   3.732208489308267*^9}},ExpressionUUID->"7941aef9-c8e5-4701-9b51-\
+8518b28fdc83"],
+
+Cell["Solve for the mean using the formula z=(x - \[Micro])/\[Sigma]", \
+"SubitemNumbered",
+ CellChangeTimes->{{3.730663061755293*^9, 3.730663070428399*^9}, {
+   3.730663106096084*^9, 3.730663186477736*^9}, {3.730663234082498*^9, 
+   3.730663235102913*^9}, {3.730663360243318*^9, 3.7306633687395363`*^9}, {
+   3.730663398947302*^9, 3.7306636767095747`*^9}, {3.7306637103571987`*^9, 
+   3.73066377134028*^9}, {3.73066381048455*^9, 3.730663828851552*^9}, 
+   3.7307211294335957`*^9, {3.7322084942005167`*^9, 3.732208517134004*^9}, {
+   3.73220854829713*^9, 3.732208569207205*^9}, {3.732208620888291*^9, 
+   3.7322086208890142`*^9}},ExpressionUUID->"8ae52c14-2e65-4de0-9f18-\
+fbf509d25c1c"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\[Micro]", " ", "=", " ", 
+  RowBox[{"12", "-", 
+   RowBox[{
+    RowBox[{"(", "2.32", ")"}], "*", 
+    RowBox[{"(", "1", ")"}]}]}]}]], "Input",
+ CellChangeTimes->{{3.732208582895359*^9, 
+  3.7322086005637493`*^9}},ExpressionUUID->"3d8ac09e-71cf-452f-8e95-\
+d3a2ef3452cf"],
+
+Cell[BoxData["9.68`"], "Output",
+ CellChangeTimes->{
+  3.732208604829853*^9},ExpressionUUID->"e050db49-de9a-4e16-bf9b-\
+5e79145064c5"]
+}, Open  ]],
+
+Cell["Solve for CDF", "SubitemNumbered",
+ CellChangeTimes->{{3.730663061755293*^9, 3.730663070428399*^9}, {
+   3.730663106096084*^9, 3.730663186477736*^9}, {3.730663234082498*^9, 
+   3.730663235102913*^9}, {3.730663360243318*^9, 3.7306633687395363`*^9}, {
+   3.730663398947302*^9, 3.7306636767095747`*^9}, {3.7306637103571987`*^9, 
+   3.73066377134028*^9}, {3.73066381048455*^9, 3.730663828851552*^9}, 
+   3.7307211294335957`*^9, {3.7322084942005167`*^9, 3.732208517134004*^9}, {
+   3.73220854829713*^9, 3.732208569207205*^9}, {3.732208623345254*^9, 
+   3.732208632321966*^9}},ExpressionUUID->"738445c6-680d-4bf0-8f9c-\
+da4f8695f4d8"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"CDF", "[", 
+  RowBox[{
+   RowBox[{"NormalDistribution", "[", 
+    RowBox[{"\[Micro]", ",", "1"}], "]"}], ",", "12"}], "]"}]], "Input",
+ CellChangeTimes->{{3.73220864994009*^9, 
+  3.732208669159114*^9}},ExpressionUUID->"4b933a42-42f8-4b36-84a0-\
+17216e30c6bf"],
+
+Cell[BoxData["0.9898295613312803`"], "Output",
+ CellChangeTimes->{
+  3.732208669787698*^9},ExpressionUUID->"fd82dd44-a5d2-4664-9efb-\
+80b24c42fe69"]
+}, Open  ]],
+
+Cell["\<\
+A work study program was developed with a university and several industries \
+in the surrounding community. Students were to work with industrial \
+sociologists during a three-month internship. Equal numbers of students from \
+the university were sent to a chemical, a textile, and a pharmaceutical \
+industry. Students completing the program were classified according to the \
+industry in which they interned. A random sample of twelve of the many \
+students who completed the program was taken. What is the probability that \
+five of the students interned in the chemical industry, and the rest of them \
+interned in some other industry?\
+\>", "ItemNumbered",
+ CellChangeTimes->{{3.730663061755293*^9, 3.730663070428399*^9}, {
+  3.730663106096084*^9, 3.730663186477736*^9}, {3.730663234082498*^9, 
+  3.730663235102913*^9}, {3.730663360243318*^9, 3.7306633687395363`*^9}, {
+  3.730663398947302*^9, 3.7306636767095747`*^9}, {3.7306637103571987`*^9, 
+  3.73066377134028*^9}, {3.73066381048455*^9, 3.7306639002657433`*^9}, {
+  3.730663956391474*^9, 3.7306640288718157`*^9}, {3.730721153827281*^9, 
+  3.730721160110654*^9}},ExpressionUUID->"895a8fde-8531-4fc5-90bc-\
+d3158ce3c99d"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"N", "[", 
+  RowBox[{
+   RowBox[{"PDF", "[", 
+    RowBox[{
+     RowBox[{"BinomialDistribution", "[", 
+      RowBox[{"12", ",", 
+       RowBox[{"1", "/", "3"}]}], "]"}], ",", "5"}], "]"}], ",", "4"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.732208693407577*^9, 
+  3.7322087103075666`*^9}},ExpressionUUID->"01afe154-5fbd-4715-bf3c-\
+5052aa8db630"],
+
+Cell[BoxData["0.1907568290741587495`4."], "Output",
+ CellChangeTimes->{
+  3.7322087108920307`*^9},ExpressionUUID->"145a13b1-71e0-427a-b747-\
+bdd4bd65daf5"]
+}, Open  ]],
+
+Cell["\<\
+In order to obtain cost savings, a company is considering offering an early \
+retirement incentive for its older management personnel. The consulting firm \
+that designed the early retirement program has found that approximately 22% \
+of the employees qualifying for the program will select early retirement \
+during the first year of eligibility. Assume that the company offers the \
+early retirement program to 10 of its management personnel. What is the \
+probability that at least 3  but no more than 5 will elect early retirement \
+in the first year? \
+\>", "ItemNumbered",
+ CellChangeTimes->{{3.730663061755293*^9, 3.730663070428399*^9}, {
+  3.730663106096084*^9, 3.730663186477736*^9}, {3.730663234082498*^9, 
+  3.730663235102913*^9}, {3.730663360243318*^9, 3.7306633687395363`*^9}, {
+  3.730663398947302*^9, 3.7306636767095747`*^9}, {3.7306637103571987`*^9, 
+  3.73066377134028*^9}, {3.73066381048455*^9, 3.7306639002657433`*^9}, {
+  3.730663956391474*^9, 
+  3.730664229449511*^9}},ExpressionUUID->"ed7b36eb-5cab-4ab9-8556-\
+46517508b237"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"PDF", "[", 
+   RowBox[{
+    RowBox[{"BinomialDistribution", "[", 
+     RowBox[{"10", ",", ".22"}], "]"}], ",", "3"}], "]"}], "+", 
+  RowBox[{"PDF", "[", 
+   RowBox[{
+    RowBox[{"BinomialDistribution", "[", 
+     RowBox[{"10", ",", "0.22"}], "]"}], ",", "4"}], "]"}], "+", 
+  RowBox[{"PDF", "[", 
+   RowBox[{
+    RowBox[{"BinomialDistribution", "[", 
+     RowBox[{"10", ",", ".22"}], "]"}], ",", "5"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.732208724306527*^9, 
+  3.732208799260909*^9}},ExpressionUUID->"c4fbce0b-627f-4480-9ae3-\
+80a8313b8def"],
+
+Cell[BoxData["0.37272613790731945`"], "Output",
+ CellChangeTimes->{{3.7322087659107847`*^9, 
+  3.732208800044372*^9}},ExpressionUUID->"b6b03826-0037-4257-9a95-\
+da21a21d1d3d"]
+}, Open  ]],
+
+Cell["\<\
+The GM production department has installed a new spray machine to paint \
+automobile doors. As is common with most spray guns, unsightly blemishes \
+often appear because of improper mixture or other problems. A worker counted \
+the number of blemishes on each door. Most doors had no blemishes, a few had \
+one, a very few had two and so on. The average number was 0.5 blemishes per \
+door. The distribution of blemishes followed the Poisson distribution. What \
+is the probability that exactly two doors in a random sample of ten doors \
+will have blemishes?\
+\>", "ItemNumbered",
+ CellChangeTimes->{{3.730663061755293*^9, 3.730663070428399*^9}, {
+  3.730663106096084*^9, 3.730663186477736*^9}, {3.730663234082498*^9, 
+  3.730663235102913*^9}, {3.730663360243318*^9, 3.7306633687395363`*^9}, {
+  3.730663398947302*^9, 3.7306636767095747`*^9}, {3.7306637103571987`*^9, 
+  3.73066377134028*^9}, {3.73066381048455*^9, 3.7306639002657433`*^9}, {
+  3.730663956391474*^9, 3.730664259569991*^9}, {3.730664383548861*^9, 
+  3.730664473682708*^9}},ExpressionUUID->"3838a33f-369a-4071-99cf-\
+065791c30a4c"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"PDF", "[", 
+  RowBox[{
+   RowBox[{"PoissonDistribution", "[", "0.5", "]"}], ",", "2"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.732208809084607*^9, 
+  3.732208819404221*^9}},ExpressionUUID->"69ecfe92-96ea-4fde-a6b1-\
+b975f57e32cc"],
+
+Cell[BoxData["0.07581633246407918`"], "Output",
+ CellChangeTimes->{
+  3.732208820344906*^9},ExpressionUUID->"360e9028-e4a9-48f5-9ed6-\
+6f873fb6c1a3"]
+}, Open  ]],
+
+Cell["\<\
+Over a long period of time in a large multinational corporation, 10% of all \
+sales trainees are rated as outstanding, 75% as excellent/good, 10% as \
+satisfactory, and 5% as unsatisfactory. Ten employees are randomly selected. \
+What is the probability that two are rated as outstanding, 4 are rated as \
+excellent/good and three are rated as satisfactory?\
+\>", "ItemNumbered",
+ CellChangeTimes->{{3.730663061755293*^9, 3.730663070428399*^9}, {
+  3.730663106096084*^9, 3.730663186477736*^9}, {3.730663234082498*^9, 
+  3.730663235102913*^9}, {3.730663360243318*^9, 3.7306633687395363`*^9}, {
+  3.730663398947302*^9, 3.7306636767095747`*^9}, {3.7306637103571987`*^9, 
+  3.73066377134028*^9}, {3.73066381048455*^9, 3.7306639002657433`*^9}, {
+  3.730663956391474*^9, 3.730664259569991*^9}, {3.730664383548861*^9, 
+  3.730664517523987*^9}, {3.730664594095929*^9, 
+  3.730664656330327*^9}},ExpressionUUID->"6f9fab69-90a8-401a-ab55-\
+cf91357b5792"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"PDF", "[", 
+  RowBox[{
+   RowBox[{"MultinomialDistribution", "[", 
+    RowBox[{"10", ",", 
+     RowBox[{"{", 
+      RowBox[{"0.1", ",", "0.75", ",", "0.1", ",", "0.05"}], "}"}]}], "]"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "4", ",", "3", ",", "1"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.7322088292231703`*^9, 
+  3.732208888857602*^9}},ExpressionUUID->"74e05613-57fb-412a-badb-\
+48d12e4bf416"],
+
+Cell[BoxData["0.0019933593750000008`"], "Output",
+ CellChangeTimes->{3.732208856345893*^9, 
+  3.732208891229329*^9},ExpressionUUID->"263bd7cd-38f1-4619-8d70-\
+c5dbb5536b9f"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+A new technique, balloon angioplasty, is being widely used to open clogged \
+heart valves and vessels. The balloon is inserted via a catheter and is \
+inflated, opening the vessel; thus no surgery is required. Left untreated, \
+50% of the people with heart valve disease die within about two years. If \
+experience with this technique suggests that approximately 70% live for more \
+than two years, would the next five patients of the patients treated with \
+balloon angioplasty at a hospital constitute a binomial with n = 5 and p = \
+.70?\
+\>", "ItemNumbered",
+ CellChangeTimes->{{3.730663061755293*^9, 3.730663070428399*^9}, {
+  3.730663106096084*^9, 3.730663186477736*^9}, {3.730663234082498*^9, 
+  3.730663235102913*^9}, {3.730663360243318*^9, 3.7306633687395363`*^9}, {
+  3.730663398947302*^9, 3.7306636767095747`*^9}, {3.7306637103571987`*^9, 
+  3.73066377134028*^9}, {3.73066381048455*^9, 3.7306639002657433`*^9}, {
+  3.730663956391474*^9, 3.730664259569991*^9}, {3.730664383548861*^9, 
+  3.730664517523987*^9}, {3.730664594095929*^9, 3.730664774859799*^9}, {
+  3.7322088994032*^9, 
+  3.732208899412964*^9}},ExpressionUUID->"3a68b1a4-82b5-4785-8859-\
+52f90a82395c"],
+
+Cell["\<\
+The trials are not identical from patient to patient, so the binomial \
+distribution cannot be used.\
+\>", "SubitemNumbered",
+ CellChangeTimes->{{3.730663061755293*^9, 3.730663070428399*^9}, {
+  3.730663106096084*^9, 3.730663186477736*^9}, {3.730663234082498*^9, 
+  3.730663235102913*^9}, {3.730663360243318*^9, 3.7306633687395363`*^9}, {
+  3.730663398947302*^9, 3.7306636767095747`*^9}, {3.7306637103571987`*^9, 
+  3.73066377134028*^9}, {3.73066381048455*^9, 3.7306639002657433`*^9}, {
+  3.730663956391474*^9, 3.730664259569991*^9}, {3.730664383548861*^9, 
+  3.730664517523987*^9}, {3.730664594095929*^9, 3.730664774859799*^9}, {
+  3.732208901823515*^9, 
+  3.732208920089102*^9}},ExpressionUUID->"10991e8e-d995-4a5d-969c-\
+18e04322a2d7"],
+
+Cell["\<\
+In a batch of 20 bottles of their product the Restin Chemical Company knows \
+that 10 bottles were contaminated. Assume that these 10 bottles were spread \
+randomly through the batch. Restin\[CloseCurlyQuote]s best customer was \
+recently sent 6 bottles from this batch and claims that 4 of the bottles were \
+contaminated. Your boss would like to know the probability that this could \
+happen.\
+\>", "ItemNumbered",
+ CellChangeTimes->{{3.730663061755293*^9, 3.730663070428399*^9}, {
+  3.730663106096084*^9, 3.730663186477736*^9}, {3.730663234082498*^9, 
+  3.730663235102913*^9}, {3.730663360243318*^9, 3.7306633687395363`*^9}, {
+  3.730663398947302*^9, 3.7306636767095747`*^9}, {3.7306637103571987`*^9, 
+  3.73066377134028*^9}, {3.73066381048455*^9, 3.7306639002657433`*^9}, {
+  3.730663956391474*^9, 3.730664259569991*^9}, {3.730664383548861*^9, 
+  3.730664517523987*^9}, {3.730664594095929*^9, 
+  3.730664847140627*^9}},ExpressionUUID->"6ef30dd3-0cdb-407e-8348-\
+81ac4b18e6a6"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"N", "[", 
+  RowBox[{
+   RowBox[{"PDF", "[", 
+    RowBox[{
+     RowBox[{"HypergeometricDistribution", "[", 
+      RowBox[{"10", ",", "10", ",", "20"}], "]"}], ",", "4"}], "]"}], ",", 
+   "4"}], "]"}]], "Input",
+ CellChangeTimes->{{3.732208928337988*^9, 
+  3.7322089562917137`*^9}},ExpressionUUID->"4640e401-aae9-4e04-a16b-\
+daf776f54c0e"],
+
+Cell[BoxData["0.2386931953495420988`4."], "Output",
+ CellChangeTimes->{{3.7322089495257196`*^9, 
+  3.732208956948024*^9}},ExpressionUUID->"b3c546b8-c545-4e0e-973a-\
+622b1291cba1"]
+}, Open  ]],
+
+Cell["\<\
+The World Series terminates when one team wins its fourth game. If the two \
+teams are evenly matched, that is, if the probability that either team will \
+win anyone game is .5, what is the probability that the series will terminate \
+at the end of the fourth game?\
+\>", "ItemNumbered",
+ CellChangeTimes->{{3.730663061755293*^9, 3.730663070428399*^9}, {
+  3.730663106096084*^9, 3.730663186477736*^9}, {3.730663234082498*^9, 
+  3.730663235102913*^9}, {3.730663360243318*^9, 3.7306633687395363`*^9}, {
+  3.730663398947302*^9, 3.7306636767095747`*^9}, {3.7306637103571987`*^9, 
+  3.73066377134028*^9}, {3.73066381048455*^9, 3.7306639002657433`*^9}, {
+  3.730663956391474*^9, 3.730664259569991*^9}, {3.730664383548861*^9, 
+  3.730664517523987*^9}, {3.730664594095929*^9, 3.7306648977834883`*^9}, {
+  3.730664930784725*^9, 
+  3.7306649307850447`*^9}},ExpressionUUID->"7c1cf7d4-47c7-41d2-9789-\
+6833162fb1d3"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"PDF", "[", 
+  RowBox[{
+   RowBox[{"BinomialDistribution", "[", 
+    RowBox[{"4", ",", "0.5"}], "]"}], ",", "4"}], "]"}]], "Input",
+ CellChangeTimes->{{3.732208984624823*^9, 
+  3.732209000610944*^9}},ExpressionUUID->"7e03269f-90ad-4624-872d-\
+d67292a58bad"],
+
+Cell[BoxData["0.0625`"], "Output",
+ CellChangeTimes->{
+  3.7322090014660883`*^9},ExpressionUUID->"8b75e512-0ed1-4c90-89c7-\
+aa7a1097afc5"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+A door-to-door salesperson for Valley Products has a 20% sales success rate. \
+Find the expected number of calls (assume these calls results are independent \
+of one another) this person will have to make in order to make five sales.\
+\>", "ItemNumbered",
+ CellChangeTimes->{{3.730663061755293*^9, 3.730663070428399*^9}, {
+   3.730663106096084*^9, 3.730663186477736*^9}, {3.730663234082498*^9, 
+   3.730663235102913*^9}, {3.730663360243318*^9, 3.7306633687395363`*^9}, {
+   3.730663398947302*^9, 3.7306636767095747`*^9}, {3.7306637103571987`*^9, 
+   3.73066377134028*^9}, {3.73066381048455*^9, 3.7306639002657433`*^9}, {
+   3.730663956391474*^9, 3.730664259569991*^9}, {3.730664383548861*^9, 
+   3.730664517523987*^9}, {3.730664594095929*^9, 3.7306648977834883`*^9}, {
+   3.730664932898645*^9, 3.7306649735420732`*^9}, 3.730721312702475*^9, {
+   3.732209014389662*^9, 
+   3.732209014390627*^9}},ExpressionUUID->"a19c5e7a-5c6a-4337-a77f-\
+0046124affb7"],
+
+Cell["\<\
+A negative distribution using the expected value formula E(x) = k/p = 5/0.2 = \
+25\
+\>", "SubitemNumbered",
+ CellChangeTimes->{{3.730663061755293*^9, 3.730663070428399*^9}, {
+   3.730663106096084*^9, 3.730663186477736*^9}, {3.730663234082498*^9, 
+   3.730663235102913*^9}, {3.730663360243318*^9, 3.7306633687395363`*^9}, {
+   3.730663398947302*^9, 3.7306636767095747`*^9}, {3.7306637103571987`*^9, 
+   3.73066377134028*^9}, {3.73066381048455*^9, 3.7306639002657433`*^9}, {
+   3.730663956391474*^9, 3.730664259569991*^9}, {3.730664383548861*^9, 
+   3.730664517523987*^9}, {3.730664594095929*^9, 3.7306648977834883`*^9}, {
+   3.730664932898645*^9, 3.7306649735420732`*^9}, 3.730721312702475*^9, {
+   3.7322090155763617`*^9, 
+   3.732209039540937*^9}},ExpressionUUID->"71355521-4c9b-48cd-9f1f-\
+a733440f7a22"]
+}, Open  ]],
+
+Cell["k = successes, p = probability", "Text",
+ CellChangeTimes->{{3.73220905559077*^9, 
+  3.732209061883298*^9}},ExpressionUUID->"75477416-7684-48c4-a4a0-\
+f1fd745349d6"],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+The number of paint blisters produced by an automated painting process at \
+Associated Industries is Poisson distributed with a mean rate of .06 blisters \
+per square foot. The process is about to be used to paint an item that \
+measures 9 by 15 feet. What is the probability that the first 12 to 18 square \
+feet will be without blisters?\
+\>", "ItemNumbered",
+ CellChangeTimes->{{3.730663061755293*^9, 3.730663070428399*^9}, {
+  3.730663106096084*^9, 3.730663186477736*^9}, {3.730663234082498*^9, 
+  3.730663235102913*^9}, {3.730663360243318*^9, 3.7306633687395363`*^9}, {
+  3.730663398947302*^9, 3.7306636767095747`*^9}, {3.7306637103571987`*^9, 
+  3.73066377134028*^9}, {3.73066381048455*^9, 3.7306639002657433`*^9}, {
+  3.730663956391474*^9, 3.730664259569991*^9}, {3.730664383548861*^9, 
+  3.730664517523987*^9}, {3.730664594095929*^9, 3.7306648977834883`*^9}, {
+  3.730664932898645*^9, 3.730665076299677*^9}, {3.7306651286955757`*^9, 
+  3.730665135608982*^9}, {3.7322093389500103`*^9, 
+  3.732209338952261*^9}},ExpressionUUID->"390ff834-20a7-40a5-b6a4-\
+cd9392664a38"],
+
+Cell["For 12 sqft", "SubitemNumbered",
+ CellChangeTimes->{{3.730663061755293*^9, 3.730663070428399*^9}, {
+   3.730663106096084*^9, 3.730663186477736*^9}, {3.730663234082498*^9, 
+   3.730663235102913*^9}, {3.730663360243318*^9, 3.7306633687395363`*^9}, {
+   3.730663398947302*^9, 3.7306636767095747`*^9}, {3.7306637103571987`*^9, 
+   3.73066377134028*^9}, {3.73066381048455*^9, 3.7306639002657433`*^9}, {
+   3.730663956391474*^9, 3.730664259569991*^9}, {3.730664383548861*^9, 
+   3.730664517523987*^9}, {3.730664594095929*^9, 3.7306648977834883`*^9}, {
+   3.730664932898645*^9, 3.730665076299677*^9}, {3.7306651286955757`*^9, 
+   3.730665135608982*^9}, {3.732209339312461*^9, 3.7322093463308907`*^9}, 
+   3.732280114298798*^9, {3.7322813410160646`*^9, 3.732281353703947*^9}, {
+   3.732281561731183*^9, 3.732281642401536*^9}, {3.732281803516597*^9, 
+   3.732281816126586*^9}},ExpressionUUID->"cae0efb0-f6c8-49e1-9cab-\
+5e422b38ad3b"]
+}, Open  ]],
+
+Cell["\<\
+\t mean = 0.06 blisters/sqft * 12 sqft = 0.72 blisters Solving for 0 blisters \
+we get ((e^-0.72) (0.72^0))/0! = 0.4867 \
+\>", "Text",
+ CellChangeTimes->{{3.7322818055474977`*^9, 
+  3.732281806975181*^9}},ExpressionUUID->"90d4746b-d71c-406f-8abb-\
+41843ef62aa3"],
+
+Cell["\<\
+For 18 sq ft
+mean = 0.06 blisters/sqft * 18 sqft = 1.08 blisters Solving for 0 blisters we \
+get ((e^-1.08) (1.08^0))/0! = 0.3395
+\
+\>", "SubitemNumbered",
+ CellChangeTimes->{{3.730663061755293*^9, 3.730663070428399*^9}, {
+   3.730663106096084*^9, 3.730663186477736*^9}, {3.730663234082498*^9, 
+   3.730663235102913*^9}, {3.730663360243318*^9, 3.7306633687395363`*^9}, {
+   3.730663398947302*^9, 3.7306636767095747`*^9}, {3.7306637103571987`*^9, 
+   3.73066377134028*^9}, {3.73066381048455*^9, 3.7306639002657433`*^9}, {
+   3.730663956391474*^9, 3.730664259569991*^9}, {3.730664383548861*^9, 
+   3.730664517523987*^9}, {3.730664594095929*^9, 3.7306648977834883`*^9}, {
+   3.730664932898645*^9, 3.730665076299677*^9}, {3.7306651286955757`*^9, 
+   3.730665135608982*^9}, {3.732209339312461*^9, 3.7322093463308907`*^9}, 
+   3.732280114298798*^9, {3.7322813410160646`*^9, 3.732281353703947*^9}, {
+   3.732281561731183*^9, 
+   3.7322815883319473`*^9}},ExpressionUUID->"92eabe82-4180-4190-810f-\
+db089f3a1756"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"twelve", " ", "=", " ", 
+   RowBox[{"PDF", "[", 
+    RowBox[{
+     RowBox[{"PoissonDistribution", "[", ".72", "]"}], ",", "0"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"eighteen", "=", 
+   RowBox[{"PDF", "[", 
+    RowBox[{
+     RowBox[{"PoissonDistribution", "[", "1.08", "]"}], ",", "0"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"twelve", " ", "-", " ", "eighteen"}]}], "Input",
+ CellChangeTimes->{{3.732209101827342*^9, 3.732209132162134*^9}, {
+  3.732209180577407*^9, 3.732209218544856*^9}, {3.732281359552189*^9, 
+  3.732281363144937*^9}, {3.732281461183886*^9, 3.732281545009185*^9}, {
+  3.7322817071234093`*^9, 3.732281708067066*^9}, {3.7322817679293633`*^9, 
+  3.732281776516654*^9}},ExpressionUUID->"5440b2c6-6172-4606-9595-\
+9620886588f5"],
+
+Cell[BoxData["0.14715673031503257`"], "Output",
+ CellChangeTimes->{{3.7322815279283333`*^9, 3.7322815457057734`*^9}, 
+   3.732281778409163*^9},ExpressionUUID->"a81d5810-31a9-46ce-bc30-\
+a5b41ed63bed"]
+}, Open  ]],
+
+Cell["\<\
+A soup company markets eight varieties of homemade soup throughout the \
+Eastern states. The standard-sized soup can holds a maximum of 11 ounces, \
+while the label on each can advertises contents of 10.75 ounces. The extra \
+.25 ounces is to allow for the possibility of the automatic filling machine \
+placing more soup than the company actually wants in a can. Past experience \
+shows that the number of ounces placed in a can is approximately normally \
+distributed, with a mean of 10.75 ounces and a standard deviation of .1 \
+ounce. What is the probability that the machine will attempt to place more \
+than 11 ounces in a can, causing an overflow to occur?\
+\>", "ItemNumbered",
+ CellChangeTimes->{{3.730663061755293*^9, 3.730663070428399*^9}, {
+  3.730663106096084*^9, 3.730663186477736*^9}, {3.730663234082498*^9, 
+  3.730663235102913*^9}, {3.730663360243318*^9, 3.7306633687395363`*^9}, {
+  3.730663398947302*^9, 3.7306636767095747`*^9}, {3.7306637103571987`*^9, 
+  3.73066377134028*^9}, {3.73066381048455*^9, 3.7306639002657433`*^9}, {
+  3.730663956391474*^9, 3.730664259569991*^9}, {3.730664383548861*^9, 
+  3.730664517523987*^9}, {3.730664594095929*^9, 3.7306648977834883`*^9}, {
+  3.730664932898645*^9, 3.730665076299677*^9}, {3.7306651286955757`*^9, 
+  3.7306652669446573`*^9}, {3.730665351620077*^9, 
+  3.730665362958365*^9}},ExpressionUUID->"6c922bec-2284-4c4e-95e6-\
+519e75cb2615"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"1", "-", 
+  RowBox[{"CDF", "[", 
+   RowBox[{
+    RowBox[{"NormalDistribution", "[", 
+     RowBox[{"10.75", ",", "0.1"}], "]"}], ",", "11"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.7322092715120897`*^9, 
+  3.7322092951419*^9}},ExpressionUUID->"5fa11594-a307-43dd-82db-92ae9a337461"],
+
+Cell[BoxData["0.006209665325776159`"], "Output",
+ CellChangeTimes->{
+  3.732209296203309*^9},ExpressionUUID->"b9b51b18-83a4-432d-afb9-\
+0f6ef01c0696"]
+}, Open  ]],
+
+Cell["\<\
+A college basketball coach has 12 players on his roster. Eight of the players \
+are receiving basketball scholarships, and four are not. Recently the team \
+has been losing most of their games. The coach decided to draw the names of 5 \
+players out of a hat and designate them as the starting lineup. What is the \
+probability that four of the five players selected are on scholarship? \
+\>", "ItemNumbered",
+ CellChangeTimes->{{3.730663061755293*^9, 3.730663070428399*^9}, {
+  3.730663106096084*^9, 3.730663186477736*^9}, {3.730663234082498*^9, 
+  3.730663235102913*^9}, {3.730663360243318*^9, 3.7306633687395363`*^9}, {
+  3.730663398947302*^9, 3.7306636767095747`*^9}, {3.7306637103571987`*^9, 
+  3.73066377134028*^9}, {3.73066381048455*^9, 3.7306639002657433`*^9}, {
+  3.730663956391474*^9, 3.730664259569991*^9}, {3.730664383548861*^9, 
+  3.730664517523987*^9}, {3.730664594095929*^9, 3.7306648977834883`*^9}, {
+  3.730664932898645*^9, 3.730665076299677*^9}, {3.7306651286955757`*^9, 
+  3.7306652669446573`*^9}, {3.730665351620077*^9, 
+  3.730665450594233*^9}},ExpressionUUID->"63c853a7-fa20-4b61-b14e-\
+36e9f5723979"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"N", "[", 
+  RowBox[{
+   RowBox[{"PDF", "[", 
+    RowBox[{
+     RowBox[{"HypergeometricDistribution", "[", 
+      RowBox[{"5", ",", "5", ",", "12"}], "]"}], ",", "4"}], "]"}], ",", 
+   "6"}], "]"}]], "Input",
+ CellChangeTimes->{{3.732209304336961*^9, 
+  3.7322093235701437`*^9}},ExpressionUUID->"d2d82d6b-fd3f-4694-ae7e-\
+b59020ba88e0"],
+
+Cell[BoxData["0.0441919191919191919`6."], "Output",
+ CellChangeTimes->{{3.732209317094852*^9, 
+  3.7322093240777607`*^9}},ExpressionUUID->"dc069af9-4abe-4a65-9c38-\
+9a37699f96f6"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1113, 1314},
+WindowMargins->{{117, Automatic}, {Automatic, 7}},
+FrontEndVersion->"11.2 for Mac OS X x86 (32-bit, 64-bit Kernel) (September \
+10, 2017)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 175, 3, 98, "Title",ExpressionUUID->"7845f6e4-e1b0-41b5-811f-13446ae0e18c"],
+Cell[758, 27, 243, 4, 31, "Subsubtitle",ExpressionUUID->"86b83f19-0271-46a9-a8e1-18de33b3942a"],
+Cell[CellGroupData[{
+Cell[1026, 35, 166, 3, 67, "Section",ExpressionUUID->"37407d45-271d-4415-b510-9ec49a67fdc2"],
+Cell[1195, 40, 186, 3, 35, "Text",ExpressionUUID->"6bc9b182-ba31-4abd-afe8-25e4a8ce6f60"],
+Cell[CellGroupData[{
+Cell[1406, 47, 267, 8, 32, "ItemNumbered",ExpressionUUID->"68d1c680-52f9-4e14-a399-4d4856ad78ce"],
+Cell[1676, 57, 217, 4, 32, "ItemNumbered",ExpressionUUID->"38f87bc1-d97e-42a4-948f-9d736f49014a"],
+Cell[1896, 63, 268, 8, 32, "ItemNumbered",ExpressionUUID->"810fda97-5ed3-4ffd-b018-8cfba3b487ca"],
+Cell[2167, 73, 316, 9, 32, "ItemNumbered",ExpressionUUID->"4563a28a-1535-408f-8c70-abf65aa44420"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2532, 88, 312, 5, 53, "Subsubtitle",ExpressionUUID->"1a838e2a-c453-4155-82d1-398ce2d119e0"],
+Cell[2847, 95, 1317, 47, 96, "Text",ExpressionUUID->"d9f308c4-072e-44cc-9ba6-8b3de1760a0a"],
+Cell[CellGroupData[{
+Cell[4189, 146, 892, 23, 73, "Input",ExpressionUUID->"82d887bd-f2fd-419f-86fe-2e984d492011"],
+Cell[5084, 171, 2075, 42, 363, "Output",ExpressionUUID->"f06b45f6-ec16-4568-8385-ac24fc4f46f4"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7196, 218, 155, 3, 54, "Subsection",ExpressionUUID->"59bf07eb-3bdd-43f1-8d63-2a58d8f8a9f7"],
+Cell[7354, 223, 348, 7, 58, "Text",ExpressionUUID->"e78a0bb1-9651-48f2-ab2a-89af5a875a8c"]
+}, Open  ]],
+Cell[7717, 233, 170, 3, 67, "Section",ExpressionUUID->"217cd2b7-1fd1-492f-b901-cba3b32e1a68"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7924, 241, 211, 4, 31, "Subsubtitle",ExpressionUUID->"afb09244-886b-4976-bbb2-02babf56d501"],
+Cell[8138, 247, 2179, 81, 254, "Text",ExpressionUUID->"de9645d7-cd41-4860-985a-700277eb4032"],
+Cell[CellGroupData[{
+Cell[10342, 332, 849, 20, 52, "Input",ExpressionUUID->"f4b2db57-082f-42dd-ac0c-b0d19085d672"],
+Cell[11194, 354, 1786, 37, 335, "Output",ExpressionUUID->"d58b7b8a-c82a-45e1-a929-23088b21e597"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13017, 396, 160, 3, 54, "Subsection",ExpressionUUID->"4d18dc4a-b74e-4800-9d61-ed47a2a29b32"],
+Cell[13180, 401, 488, 9, 58, "Text",ExpressionUUID->"51888a17-000f-4009-9a24-1f86e842c438"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13705, 415, 160, 3, 54, "Subsection",ExpressionUUID->"b729f50f-6c6c-495d-ad9f-0eb026ad5083"],
+Cell[13868, 420, 2430, 61, 334, "Text",ExpressionUUID->"e7cb1cbc-b0da-40e2-ba94-a99e52356a57"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16335, 486, 157, 3, 54, "Subsection",ExpressionUUID->"4b5b3721-8457-4e1d-865f-c308e5b54e73"],
+Cell[16495, 491, 459, 8, 58, "Text",ExpressionUUID->"089be95a-44b3-4de8-8a2e-005bef999b29"],
+Cell[CellGroupData[{
+Cell[16979, 503, 992, 25, 94, "Input",ExpressionUUID->"dee7cdf7-5c33-43d9-817e-cb8bb3fd46e6"],
+Cell[17974, 530, 3549, 88, 242, "Output",ExpressionUUID->"16f1d0e3-3e5d-4e7c-b2f5-c8c0731163de"],
+Cell[21526, 620, 308, 6, 51, "Output",ExpressionUUID->"796df49c-bf3c-4e2e-8166-a9ed54917bd2"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[21883, 632, 163, 3, 67, "Section",ExpressionUUID->"0e38a571-fa3e-43ac-860b-a770bd878bbc"],
+Cell[22049, 637, 503, 13, 35, "Text",ExpressionUUID->"bdc1a17b-6e14-4e45-88e3-0766da93e0e4"],
+Cell[CellGroupData[{
+Cell[22577, 654, 161, 3, 32, "ItemNumbered",ExpressionUUID->"01bd4ab6-938e-45b9-afd9-2360ca143613"],
+Cell[22741, 659, 173, 3, 32, "ItemNumbered",ExpressionUUID->"608171e2-8126-461a-a8fe-6ed81ef3b18a"],
+Cell[22917, 664, 160, 3, 32, "ItemNumbered",ExpressionUUID->"b3f4fde4-cd14-4b16-b746-3cb9cd8e5251"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[23114, 672, 1097, 31, 73, "Input",ExpressionUUID->"6704e5f1-7594-4f8c-b641-a6405cf15432"],
+Cell[24214, 705, 2305, 45, 367, "Output",ExpressionUUID->"7dc93dd3-e3e6-4e56-8001-6440620a08a3"]
+}, Open  ]],
+Cell[26534, 753, 1773, 36, 246, "Text",ExpressionUUID->"4c813ce9-0541-4e27-9e0b-a2e4863ab179"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[28344, 794, 171, 3, 67, "Section",ExpressionUUID->"544ca357-c625-43a1-99b6-09313584d28d"],
+Cell[28518, 799, 2522, 82, 108, "Subsection",ExpressionUUID->"1c50d894-bd48-4e6a-81b0-5a45b442f834"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[31089, 887, 208, 4, 31, "Subsubtitle",ExpressionUUID->"eb6a3bf4-6ca0-471b-ab21-7f9d17ad2432"],
+Cell[31300, 893, 2962, 95, 143, "Text",ExpressionUUID->"2bf67f5f-69c9-4e1b-b95b-635caf697a3b"],
+Cell[CellGroupData[{
+Cell[34287, 992, 951, 24, 52, "Input",ExpressionUUID->"59a2f088-3c09-46cd-983d-f0b65da7efa1"],
+Cell[35241, 1018, 1990, 40, 399, "Output",ExpressionUUID->"a1a5616a-2859-48b5-a33e-14b552c9f813"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[37268, 1063, 160, 3, 54, "Subsection",ExpressionUUID->"73349d4f-c3d1-4bbb-befe-9dbed022c713"],
+Cell[37431, 1068, 300, 7, 35, "Text",ExpressionUUID->"629d6754-41bb-4cdc-9fc8-034899493ad3"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[37768, 1080, 215, 4, 67, "Section",ExpressionUUID->"05b569e3-03c0-473d-8128-2ae6eb9d8067"],
+Cell[37986, 1086, 621, 16, 81, "Subsection",ExpressionUUID->"b21b1ef2-f905-495a-8fd3-6c1550d2a4d4"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[38656, 1108, 265, 5, 31, "Subsubtitle",ExpressionUUID->"b6ee3e5a-6568-477f-a2c2-13eac4c04834"],
+Cell[38924, 1115, 1843, 55, 153, "Text",ExpressionUUID->"0d7aa11d-7d4f-497f-bcce-5e1d6f65fdfe"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[40804, 1175, 305, 5, 31, "Subsubtitle",ExpressionUUID->"8ed00bd5-ac36-41e9-940b-126d08309990"],
+Cell[41112, 1182, 519, 17, 39, "Text",ExpressionUUID->"fd536c83-4c2d-4c6c-9122-af0234249a70"],
+Cell[CellGroupData[{
+Cell[41656, 1203, 619, 17, 52, "Input",ExpressionUUID->"863daeac-36dc-4cfa-a4e0-16b3d10874cb"],
+Cell[42278, 1222, 1809, 38, 393, "Output",ExpressionUUID->"f864b01e-e7c2-4e16-a566-f7b823426786"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[44124, 1265, 201, 4, 45, "Subsubsection",ExpressionUUID->"ced0042f-c54c-429f-b1d5-9d72ce5e16f0"],
+Cell[44328, 1271, 424, 9, 58, "Text",ExpressionUUID->"0c0e3ce0-43f0-44b7-b757-de9b14b50387"],
+Cell[CellGroupData[{
+Cell[44777, 1284, 668, 15, 73, "Input",ExpressionUUID->"906702ec-7bfa-469b-9da4-8d91ddad76e2"],
+Cell[45448, 1301, 1708, 44, 246, "Output",ExpressionUUID->"647c930d-5393-4a62-b455-4d8074ed2393"],
+Cell[47159, 1347, 246, 4, 34, "Output",ExpressionUUID->"e619c747-fb54-4fb1-a71a-4f6d2dd76f06"]
+}, Open  ]],
+Cell[47420, 1354, 631, 11, 150, "Text",ExpressionUUID->"db556f88-aa58-4c96-ac2d-5c79a88520ae"],
+Cell[CellGroupData[{
+Cell[48076, 1369, 572, 14, 73, "Input",ExpressionUUID->"a6d6a201-f126-471c-a548-6c17d30c336f"],
+Cell[48651, 1385, 1949, 48, 247, "Output",ExpressionUUID->"6f44f587-2280-458d-9424-92f44ac889cd"],
+Cell[50603, 1435, 172, 3, 34, "Output",ExpressionUUID->"684a48ea-0638-4068-b6e7-8fd1fc06496c"]
+}, Open  ]],
+Cell[50790, 1441, 152, 3, 30, "Input",ExpressionUUID->"6e2b45ce-17ad-4d93-884f-2d523ab22199"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[50979, 1449, 163, 3, 67, "Section",ExpressionUUID->"26394c7d-b492-49ae-bdfa-c9460795f009"],
+Cell[51145, 1454, 180, 3, 35, "Text",ExpressionUUID->"e4f738dd-b689-421e-bc65-588b1c3e40e0"],
+Cell[CellGroupData[{
+Cell[51350, 1461, 378, 8, 53, "ItemNumbered",ExpressionUUID->"8a718ecd-deb5-426f-8ac4-f31aec4d639e"],
+Cell[51731, 1471, 349, 7, 32, "ItemNumbered",ExpressionUUID->"b13052a0-366b-4d10-99c0-c6062cce2d65"],
+Cell[52083, 1480, 445, 8, 53, "ItemNumbered",ExpressionUUID->"e6b3f1ea-c7fa-445a-afb2-255cf1bf3b9a"]
+}, Open  ]],
+Cell[52543, 1491, 305, 6, 35, "Text",ExpressionUUID->"717c3ba1-7368-4797-8adc-37d9ec528868"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[52897, 1503, 356, 6, 31, "Subsubtitle",ExpressionUUID->"dc2e7e01-e8bc-4a97-9bd8-3f2c844f7dda"],
+Cell[53256, 1511, 711, 19, 97, "Text",ExpressionUUID->"9ed2be07-fb4e-46c7-a3d3-3ca48675d00e"],
+Cell[CellGroupData[{
+Cell[53992, 1534, 730, 19, 73, "Input",ExpressionUUID->"34fbd3fd-fc28-4049-a87f-9ef8aaa89efb"],
+Cell[54725, 1555, 1780, 37, 335, "Output",ExpressionUUID->"b6af79ec-bc99-46ec-8557-393a63f302c2"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[56542, 1597, 286, 5, 45, "Subsubsection",ExpressionUUID->"5e6f5499-7641-4d18-8d60-8f8aba5131b7"],
+Cell[CellGroupData[{
+Cell[56853, 1606, 186, 3, 27, "Subitem",ExpressionUUID->"433451d2-4f10-4a9f-8492-606fd298431e"],
+Cell[57042, 1611, 198, 3, 27, "Subitem",ExpressionUUID->"6019729b-5552-40ad-bfd8-ae5cc93fa499"],
+Cell[57243, 1616, 178, 3, 27, "Subitem",ExpressionUUID->"3a54e694-7c60-4c8f-b398-e73eca22cc9f"],
+Cell[57424, 1621, 196, 3, 27, "Subitem",ExpressionUUID->"59bc7fbf-6dc9-4950-9a82-26fc2e9afff9"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[57669, 1630, 218, 4, 67, "Section",ExpressionUUID->"8b992727-ca5f-43e0-aa8e-86025bbd79ab"],
+Cell[57890, 1636, 307, 6, 35, "Text",ExpressionUUID->"658e49bf-c8ff-4d91-bbb2-3447efb1fcef"],
+Cell[58200, 1644, 188, 3, 35, "Text",ExpressionUUID->"a85d3a0e-7c8b-462c-b33e-3e8955a802df"],
+Cell[58391, 1649, 166, 3, 35, "Text",ExpressionUUID->"c86d74d2-b8fa-48d7-a2f3-ff2f723add7c"],
+Cell[58560, 1654, 555, 17, 47, "Text",ExpressionUUID->"5d28305d-a556-4d8f-9ee2-166f07bd3243"],
+Cell[59118, 1673, 393, 12, 39, "Text",ExpressionUUID->"43dc91f9-af90-47ed-9e5b-298493080e16"],
+Cell[59514, 1687, 419, 12, 35, "Text",ExpressionUUID->"9258e330-472d-4911-b6d2-f6d1b6d72b2a"],
+Cell[59936, 1701, 511, 14, 39, "Text",ExpressionUUID->"a458689f-2c57-45c5-be38-ce9dbb4e3dbd"],
+Cell[60450, 1717, 942, 28, 76, "Text",ExpressionUUID->"7c6dbdef-dba0-4868-9d5d-9defe1e6cf65"],
+Cell[61395, 1747, 601, 14, 35, "Text",ExpressionUUID->"4276a775-5977-4b84-ad71-53e99b8b2da4"],
+Cell[61999, 1763, 225, 5, 35, "Text",ExpressionUUID->"d103b6a4-5236-4bad-8217-2777e115b53e"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[62273, 1774, 411, 7, 31, "Subsubtitle",ExpressionUUID->"d5aef776-5397-44b3-b1b9-6bf65eba0dcd"],
+Cell[62687, 1783, 598, 18, 49, "Text",ExpressionUUID->"cd3432c4-3818-4159-af92-f4d1aab378e3"],
+Cell[63288, 1803, 368, 7, 58, "Text",ExpressionUUID->"8f2affcc-5ab6-46d0-99be-d733fdb5a85a"],
+Cell[63659, 1812, 544, 16, 43, "Text",ExpressionUUID->"aca12617-ee80-41d7-9e16-afb3cb3407f7"],
+Cell[CellGroupData[{
+Cell[64228, 1832, 723, 20, 52, "Input",ExpressionUUID->"40e54191-eae3-44a1-9015-1256cad16176"],
+Cell[64954, 1854, 1917, 39, 333, "Output",ExpressionUUID->"aa2cb5bf-38fe-4173-a3c0-e0fa8ddf1d5f"]
+}, Open  ]],
+Cell[66886, 1896, 129, 3, 30, "Input",ExpressionUUID->"128af8f5-8a24-49f4-a152-b71f56b17a9f"],
+Cell[67018, 1901, 317, 7, 35, "Text",ExpressionUUID->"7daf9b0b-8ca8-4a78-adb0-28e3828daf1a"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[67372, 1913, 458, 7, 31, "Subsubtitle",ExpressionUUID->"450e326e-69e8-4bd5-8ece-f86c3d84c4b4"],
+Cell[67833, 1922, 575, 17, 42, "Text",ExpressionUUID->"995420d1-fe69-4be4-8961-88e19f711d8e"],
+Cell[CellGroupData[{
+Cell[68433, 1943, 646, 19, 52, "Input",ExpressionUUID->"9b988210-c45d-472b-8a5e-de1b4a6b14a2"],
+Cell[69082, 1964, 1877, 39, 333, "Output",ExpressionUUID->"f9c17bfc-24ae-47fc-9872-7e65907347ef"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[70996, 2008, 162, 3, 67, "Section",ExpressionUUID->"fe86c985-3920-4a2d-9cd7-cfd8b3a72762"],
+Cell[71161, 2013, 1253, 19, 116, "ItemNumbered",ExpressionUUID->"3645fc66-ec49-4aa8-ae77-b97b3019e6c3"],
+Cell[CellGroupData[{
+Cell[72439, 2036, 341, 10, 30, "Input",ExpressionUUID->"c35a47d9-7b09-4a00-bccf-081185f945fc"],
+Cell[72783, 2048, 155, 3, 34, "Output",ExpressionUUID->"6a5a4b13-26f9-4484-8bc3-b19d5e61bcd8"]
+}, Open  ]],
+Cell[72953, 2054, 870, 14, 95, "ItemNumbered",ExpressionUUID->"769b6c21-461b-4461-a25e-4ab1a65a5c2f"],
+Cell[CellGroupData[{
+Cell[73848, 2072, 358, 10, 30, "Input",ExpressionUUID->"2b0ca2f6-7b5c-41bc-b0e7-521dcd924d44"],
+Cell[74209, 2084, 179, 3, 34, "Output",ExpressionUUID->"2fb149ce-e7c5-4f20-ac43-1ac572c8e959"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[74425, 2092, 900, 14, 74, "ItemNumbered",ExpressionUUID->"7941aef9-c8e5-4701-9b51-8518b28fdc83"],
+Cell[75328, 2108, 687, 10, 26, "SubitemNumbered",ExpressionUUID->"8ae52c14-2e65-4de0-9f18-fbf509d25c1c"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[76052, 2123, 295, 8, 30, "Input",ExpressionUUID->"3d8ac09e-71cf-452f-8e95-d3a2ef3452cf"],
+Cell[76350, 2133, 134, 3, 34, "Output",ExpressionUUID->"e050db49-de9a-4e16-bf9b-5e79145064c5"]
+}, Open  ]],
+Cell[76499, 2139, 634, 9, 26, "SubitemNumbered",ExpressionUUID->"738445c6-680d-4bf0-8f9c-da4f8695f4d8"],
+Cell[CellGroupData[{
+Cell[77158, 2152, 283, 7, 30, "Input",ExpressionUUID->"4b933a42-42f8-4b36-84a0-17216e30c6bf"],
+Cell[77444, 2161, 148, 3, 34, "Output",ExpressionUUID->"fd82dd44-a5d2-4664-9efb-80b24c42fe69"]
+}, Open  ]],
+Cell[77607, 2167, 1188, 18, 116, "ItemNumbered",ExpressionUUID->"895a8fde-8531-4fc5-90bc-d3158ce3c99d"],
+Cell[CellGroupData[{
+Cell[78820, 2189, 370, 11, 30, "Input",ExpressionUUID->"01afe154-5fbd-4715-bf3c-5052aa8db630"],
+Cell[79193, 2202, 155, 3, 34, "Output",ExpressionUUID->"145a13b1-71e0-427a-b747-bdd4bd65daf5"]
+}, Open  ]],
+Cell[79363, 2208, 1057, 17, 95, "ItemNumbered",ExpressionUUID->"ed7b36eb-5cab-4ab9-8556-46517508b237"],
+Cell[CellGroupData[{
+Cell[80445, 2229, 582, 16, 30, "Input",ExpressionUUID->"c4fbce0b-627f-4480-9ae3-80a8313b8def"],
+Cell[81030, 2247, 175, 3, 34, "Output",ExpressionUUID->"b6b03826-0037-4257-9a95-da21a21d1d3d"]
+}, Open  ]],
+Cell[81220, 2253, 1106, 17, 95, "ItemNumbered",ExpressionUUID->"3838a33f-369a-4071-99cf-065791c30a4c"],
+Cell[CellGroupData[{
+Cell[82351, 2274, 257, 7, 30, "Input",ExpressionUUID->"69ecfe92-96ea-4fde-a6b1-b975f57e32cc"],
+Cell[82611, 2283, 149, 3, 34, "Output",ExpressionUUID->"360e9028-e4a9-48f5-9ed6-6f873fb6c1a3"]
+}, Open  ]],
+Cell[82775, 2289, 953, 15, 74, "ItemNumbered",ExpressionUUID->"6f9fab69-90a8-401a-ab55-cf91357b5792"],
+Cell[CellGroupData[{
+Cell[83753, 2308, 440, 12, 30, "Input",ExpressionUUID->"74e05613-57fb-412a-badb-48d12e4bf416"],
+Cell[84196, 2322, 173, 3, 34, "Output",ExpressionUUID->"263bd7cd-38f1-4619-8d70-c5dbb5536b9f"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[84406, 2330, 1183, 19, 95, "ItemNumbered",ExpressionUUID->"3a68b1a4-82b5-4785-8859-52f90a82395c"],
+Cell[85592, 2351, 748, 13, 26, "SubitemNumbered",ExpressionUUID->"10991e8e-d995-4a5d-969c-18e04322a2d7"],
+Cell[86343, 2366, 990, 16, 74, "ItemNumbered",ExpressionUUID->"6ef30dd3-0cdb-407e-8348-81ac4b18e6a6"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[87370, 2387, 361, 10, 30, "Input",ExpressionUUID->"4640e401-aae9-4e04-a16b-daf776f54c0e"],
+Cell[87734, 2399, 179, 3, 34, "Output",ExpressionUUID->"b3c546b8-c545-4e0e-973a-622b1291cba1"]
+}, Open  ]],
+Cell[87928, 2405, 914, 15, 53, "ItemNumbered",ExpressionUUID->"7c1cf7d4-47c7-41d2-9789-6833162fb1d3"],
+Cell[CellGroupData[{
+Cell[88867, 2424, 280, 7, 30, "Input",ExpressionUUID->"7e03269f-90ad-4624-872d-d67292a58bad"],
+Cell[89150, 2433, 138, 3, 34, "Output",ExpressionUUID->"8b75e512-0ed1-4c90-89c7-aa7a1097afc5"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[89325, 2441, 962, 15, 53, "ItemNumbered",ExpressionUUID->"a19c5e7a-5c6a-4337-a77f-0046124affb7"],
+Cell[90290, 2458, 816, 14, 26, "SubitemNumbered",ExpressionUUID->"71355521-4c9b-48cd-9f1f-a733440f7a22"]
+}, Open  ]],
+Cell[91121, 2475, 171, 3, 35, "Text",ExpressionUUID->"75477416-7684-48c4-a4a0-f1fd745349d6"],
+Cell[CellGroupData[{
+Cell[91317, 2482, 1085, 17, 74, "ItemNumbered",ExpressionUUID->"390ff834-20a7-40a5-b6a4-cd9392664a38"],
+Cell[92405, 2501, 931, 13, 26, "SubitemNumbered",ExpressionUUID->"cae0efb0-f6c8-49e1-9cab-5e422b38ad3b"]
+}, Open  ]],
+Cell[93351, 2517, 272, 6, 35, "Text",ExpressionUUID->"90d4746b-d71c-406f-8abb-41843ef62aa3"],
+Cell[93626, 2525, 1014, 18, 64, "SubitemNumbered",ExpressionUUID->"92eabe82-4180-4190-810f-db089f3a1756"],
+Cell[CellGroupData[{
+Cell[94665, 2547, 821, 19, 73, "Input",ExpressionUUID->"5440b2c6-6172-4606-9595-9620886588f5"],
+Cell[95489, 2568, 200, 3, 34, "Output",ExpressionUUID->"a81d5810-31a9-46ce-bc30-a5b41ed63bed"]
+}, Open  ]],
+Cell[95704, 2574, 1409, 21, 116, "ItemNumbered",ExpressionUUID->"6c922bec-2284-4c4e-95e6-519e75cb2615"],
+Cell[CellGroupData[{
+Cell[97138, 2599, 307, 7, 30, "Input",ExpressionUUID->"5fa11594-a307-43dd-82db-92ae9a337461"],
+Cell[97448, 2608, 150, 3, 34, "Output",ExpressionUUID->"b9b51b18-83a4-432d-afb9-0f6ef01c0696"]
+}, Open  ]],
+Cell[97613, 2614, 1132, 17, 74, "ItemNumbered",ExpressionUUID->"63c853a7-fa20-4b61-b14e-36e9f5723979"],
+Cell[CellGroupData[{
+Cell[98770, 2635, 359, 10, 30, "Input",ExpressionUUID->"d2d82d6b-fd3f-4694-ae7e-b59020ba88e0"],
+Cell[99132, 2647, 179, 3, 34, "Output",ExpressionUUID->"dc069af9-4abe-4a65-9c38-9a37699f96f6"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
